@@ -1,7 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 interface CourseCardProps {
+  _id: string;
   thumbnail: string;
   title: string;
   description: string;
@@ -12,7 +14,17 @@ interface CourseCardProps {
   lectures: string;
 }
 
-export default function CourseCard({thumbnail, title, description, level, rating, students, duration, lectures}: CourseCardProps) {
+export default function CourseCard({
+  _id,
+  thumbnail,
+  title,
+  description,
+  level,
+  rating,
+  students,
+  duration,
+  lectures,
+}: CourseCardProps) {
   return (
     <div className="max-w-xs bg-[#F3F6F7] text-lg rounded-[12px] overflow-hidden p-5 space-y-4">
       {/* Image Section */}
@@ -26,16 +38,22 @@ export default function CourseCard({thumbnail, title, description, level, rating
         />
         {/* Badge Section */}
         <div className="flex items-center justify-between">
-          <span className={`${level === "All levels" ? "bg-[#D9FFE2] text-[#027D1F]" : "bg-[#FFFAE6] text-[#CCB247]"} text-sm font-semibold px-2.5 py-1 rounded`}>
+          <span
+            className={`${
+              level === "All levels"
+                ? "bg-[#D9FFE2] text-[#027D1F]"
+                : "bg-[#FFFAE6] text-[#CCB247]"
+            } text-sm font-semibold px-2.5 py-1 rounded`}
+          >
             {level}
           </span>
           <div className="">
             <Image
               src="/icons/favorite.svg"
-                alt="favorite"
-                width={20}
-                height={20}
-                className="w-[20px] h-[20px] object-contain"
+              alt="favorite"
+              width={20}
+              height={20}
+              className="w-[20px] h-[20px] object-contain"
             />
           </div>
         </div>
@@ -44,9 +62,12 @@ export default function CourseCard({thumbnail, title, description, level, rating
       {/* Content Section */}
       <div className="space-y-4">
         {/* Title */}
-        <h2 className="text-xl font-medium text-black-primary">
+        <Link
+          href={`/courses/details/${_id}`}
+          className="text-xl font-semibold text-black hover:text-yellow-primary transition-colors"
+        >
           {title || "Course Title"}
-        </h2>
+        </Link>
         {/* Description */}
         <p className="text-lg text-black-secondary">
           {description || "Course Description"}
@@ -63,9 +84,13 @@ export default function CourseCard({thumbnail, title, description, level, rating
               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
             </svg>
 
-            <span className="ml-1 font-semibold text-gray-700">{rating || "4.7 (7k)"}</span>
+            <span className="ml-1 font-semibold text-gray-700">
+              {rating || "4.7 (7k)"}
+            </span>
           </div>
-          <span className="ml-2 text-gray-600">{students || "13k Students"}</span>
+          <span className="ml-2 text-gray-600">
+            {students || "13k Students"}
+          </span>
         </div>
         {/* Duration and Lectures */}
         <div className="flex justify-between items-center text-gray-600">
@@ -89,10 +114,10 @@ export default function CourseCard({thumbnail, title, description, level, rating
           <p className="flex items-center gap-1.5">
             <Image
               src="/icons/sheets.svg"
-                alt="sheets"
-                width={20}
-                height={20}
-                className="w-[20px] h-[20px] object-contain"
+              alt="sheets"
+              width={20}
+              height={20}
+              className="w-[20px] h-[20px] object-contain"
             />
             <span>{lectures || "48 lectures"}</span>
           </p>
