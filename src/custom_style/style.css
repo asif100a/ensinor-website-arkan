@@ -1,0 +1,25 @@
+.input-field-text{
+    font-size: 18px !important;
+}
+.custom-container{
+    max-width: 1322px !important;
+    margin: 0 auto !important;
+    padding: 64px 0 !important;
+    box-sizing: border-box !important;
+}
+
+.language-dropdown {
+    width: 600px !important;
+    margin: 0 auto !important;
+    left: -400 !important;
+}
+
+@media screen and (max-width: 768px) {
+    .custom-container {
+        padding: 32px 16px !important;
+    }
+    .language-dropdown {
+        width: 100% !important;
+    }
+    
+}
