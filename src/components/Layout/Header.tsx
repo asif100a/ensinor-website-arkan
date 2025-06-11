@@ -13,27 +13,17 @@ import Image from "next/image";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import axios from "axios";
 import "@/custom_style/style.css";
+import { usePathname } from "next/navigation";
+import { pages } from "../../../public/data";
+import { Page } from "@/types";
 
-const pages: { title: string; href: string }[] = [
-  {
-    title: "About Us",
-    href: "about-us",
-  },
-  {
-    title: "Blogs",
-    href: "blogs",
-  },
-  {
-    title: "FAQ",
-    href: "faq",
-  },
-  {
-    title: "Contact Us",
-    href: "contact-us",
-  },
-];
+interface Link {
+  name: string;
+  url: string;
+}
 
 const Header = () => {
+  const pathname = usePathname();
   const [countryCodes, setCountryCodes] = React.useState<string[]>(["EN"]);
   const [language, setLanguage] = React.useState<string>("EN");
 
@@ -56,6 +46,15 @@ const Header = () => {
   const handleLanguageChange = async (lang: string) => {
     setLanguage(lang);
   };
+
+  const links: Link[] = [
+    { name: "Home", url: "/" },
+    { name: "Courses", url: "/courses" },
+    { name: "Instructors", url: "/instructors" },
+    { name: "Business", url: "/business" },
+    { name: "Events", url: "/events" },
+    { name: "Shop", url: "/shop" },
+  ];
 
   return (
     <header className="bg-[#1B263B] text-white text-lg w-full h-fit py-4">
@@ -82,27 +81,27 @@ const Header = () => {
         <NavigationMenu viewport={false} className="w-full mx-auto space-x-3">
           <NavigationMenuList className="flex gap-6 border-r border-white px-3 shadow-none">
             <ul className="flex items-center gap-6">
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="/courses">Courses</Link>
-              </li>
-              <li>
-                <Link href="/instructors">Instructors</Link>
-              </li>
-              <li>
-                <Link href="/business">Business</Link>
-              </li>
+              {links.slice(0, 4).map((link: Link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.url}
+                    className={
+                      link.url === pathname ? "text-white" : "text-[#BFBFBF]"
+                    }
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
             {/* Pages Dropdown */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-inherit hover:bg-inherit text-white text-lg font-normal focus:bg-inherit">
+              <NavigationMenuTrigger className="bg-inherit hover:bg-inherit text-[#BFBFBF] hover:text-white text-lg font-normal focus:bg-inherit">
                 Pages
               </NavigationMenuTrigger>
               <NavigationMenuContent className="z-20 bg-white text-black-primary w-fit rounded-[8px] shadow-lg p-2">
                 <ul className="flex flex-col">
-                  {pages.map((page) => (
+                  {pages.map((page: Page) => (
                     <li key={page.title}>
                       <Link
                         href={page.href}
@@ -117,17 +116,23 @@ const Header = () => {
             </NavigationMenuItem>
 
             <ul className="flex items-center gap-6">
-              <li>
-                <Link href="/">Events</Link>
-              </li>
-              <li>
-                <Link href="/">Shop</Link>
-              </li>
+              {links.slice(4).map((link: Link, index: number) => (
+                <li key={index}>
+                  <Link
+                    href={link.url}
+                    className={
+                      link.url === pathname ? "text-white" : "text-[#BFBFBF]"
+                    }
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
 
             {/* Language Dropdown */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-transparent hover:bg-transparent text-white text-lg font-normal focus:bg-transparent flex items-center gap-2">
+              <NavigationMenuTrigger className="bg-transparent hover:bg-transparent text-[#BFBFBF] hover:text-white text-lg font-normal focus:bg-transparent flex items-center gap-2">
                 <Image
                   src="/images/header/flag-us.png"
                   width={24}

@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import { Card } from "@/components/ui/card";
 import SignUp from "@/components/Pages/SignUp";
@@ -11,8 +12,12 @@ export default function Login() {
   return (
     <div>
       {/* Banner Section */}
-      <BannerPrimary 
-        title={ activeTab === "signIn" ? "Welcome Back! Sign In to Continue" : "Welcome To ENSINOR! Create An Account"}
+      <BannerPrimary
+        title={
+          activeTab === "signIn"
+            ? "Welcome Back! Sign In to Continue"
+            : "Welcome To ENSINOR! Create An Account"
+        }
       />
 
       <section className="w-full h-full py-16 text-[#2D2D2D] text-xl flex justify-center items-center">

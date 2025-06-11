@@ -9,10 +9,10 @@ import { RiArrowRightSLine } from "react-icons/ri";
 
 interface BannerPrimaryProps {
   title: string;
-  links?: BannerLink[];
+  link?: BannerLink;
 }
 
-export default function BannerPrimary({title, links}: BannerPrimaryProps) {
+export default function BannerPrimary({title, link}: BannerPrimaryProps) {
   const pathname = usePathname();
 
   return (
@@ -50,20 +50,20 @@ export default function BannerPrimary({title, links}: BannerPrimaryProps) {
         {title || "Welcome to Ensinor"}
       </h1>
       {/* Links */}
-      {links && links.length > 0 && (
+      {link && (
         <div className="text-white text-xl flex items-center gap-2">
             <Link
-              href={links[0].url}
-              className={`${links[0].url === pathname ? "text-active-link" : "text-inactive-link"} hover:underline`}
+              href='/'
+              className={`${pathname === '/' ? "text-active-link" : "text-inactive-link"} hover:underline`}
             >
-              {links[0].title}
+              Home
             </Link>
             <RiArrowRightSLine className="text-white text-3xl" />
             <Link
-              href={links[1].url}
-              className={`${links[1].url === pathname ? "text-active-link" : "text-inactive-link"} hover:underline`}
+              href={link.url}
+              className={`${link.url === pathname ? "text-active-link" : "text-inactive-link"} hover:underline`}
             >
-              {links[1].title}
+              {link.name}
             </Link>
         </div>
       )}

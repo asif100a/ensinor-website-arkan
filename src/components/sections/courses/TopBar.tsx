@@ -3,7 +3,7 @@ import { IoIosArrowDown, IoIosSearch } from "react-icons/io";
 
 export default function TopBar() {
   return (
-    <div className="w-full flex items-center gap-6">
+    <section className="w-full flex items-center gap-6">
       <div className="text-lg w-fit h-fit relative">
         <input
           type="email"
@@ -22,6 +22,6 @@ export default function TopBar() {
       <div className="w-full text-lg text-center text-placeholder-text">
         <p>Showing 1-20 of 120 Results</p>
       </div>
-    </div>
+    </section>
   );
 }

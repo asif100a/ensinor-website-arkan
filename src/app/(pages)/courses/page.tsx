@@ -10,10 +10,8 @@ import { PaginationBar } from "@/components/custom-ui/PaginationBar";
 import GreatConversation from "@/components/sections/courses/GreatConversation";
 
 export default function Courses() {
-  const bannerLinks: BannerLink[] = [
-    { title: "Home", url: "/" },
-    { title: "Courses", url: "/courses" },
-  ];
+  const link: BannerLink = { name: "Courses", url: "/courses" };
+
   const newCoursesData = [
     ...coursesData.slice(0, 3),
     ...coursesData.slice(0, 3),
@@ -22,7 +20,7 @@ export default function Courses() {
 
   return (
     <div>
-      <BannerPrimary title="Courses" links={bannerLinks} />
+      <BannerPrimary title="Courses" link={link} />
       <section className="custom-container flex gap-6">
         <Sidebar />
         <div className="w-full space-y-8">
@@ -33,6 +31,7 @@ export default function Courses() {
             {newCoursesData.map((course, index) => (
               <CourseCard
                 key={index}
+                _id={index + ""}
                 thumbnail={course.thumbnail}
                 title={course.title}
                 description={course.description}

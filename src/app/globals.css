@@ -4,6 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
+  --color-black-normal: #303030;
   --color-black-primary: #404040;
   --color-black-secondary: #505050;
   --color-gray-primary: #F3F6F7;
@@ -15,6 +16,7 @@
   --color-active-link: #FFFFFF;
   --color-placeholder-text: #606060;
   --color-gray-background: #F3F6F7;
+  --color-yellow-star: #FDBA25;
 }
 /* --border-radius-radius-8: 8px;
 --border-radius-radius-12: 12px; */

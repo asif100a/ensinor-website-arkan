@@ -5,50 +5,9 @@ import Image from "next/image";
 import React from "react";
 import { IoIosArrowDown, IoMdPlay } from "react-icons/io";
 import { MdLockOutline } from "react-icons/md";
+import { courseCurriculums, learningContents } from "../../../../../../public/data/courseDetails";
 
 export default function CourseDetails() {
-  const learningContents = [
-    "Principles of User Experience (UX) and User Interface (UI) Design",
-    "Conducting user research and building user personas",
-    "Creating user journeys, wireframes, and sitemaps",
-    "Designing high-fidelity interfaces with Figma or Adobe XD",
-    "Prototyping and testing designs with real users",
-    "Responsive and accessible design principles",
-    "Handoff to developers and working in design teams",
-  ];
-
-  const courseCurriculums = [
-    {
-      content: "Understanding Design Thinking & Process",
-      duration: "1h 35m",
-      category: "public",
-    },
-    {
-      content: "Problem Statement and Business Pitch",
-      duration: "34m 35s",
-      category: "public",
-    },
-    {
-      content: "User Research Techniques",
-      duration: "1h 35m",
-      category: "private",
-    },
-    {
-      content: "User Research Techniques & User Choose Style",
-      duration: "1h 35m",
-      category: "public",
-    },
-    {
-      content: "User Research and Web Architecture",
-      duration: "34m 35s",
-      category: "public",
-    },
-    {
-      content: "Hand Sketching and Prototyping",
-      duration: "1h 35m",
-      category: "private",
-    },
-  ];
 
   return (
     <div className="custom-container flex gap-6 space-y-10">

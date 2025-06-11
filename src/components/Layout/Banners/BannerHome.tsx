@@ -3,14 +3,22 @@
 import BottomCards from "@/components/custom-ui/hero/BottomCards";
 import Image from "next/image";
 import React from "react";
+import { IoSearch } from "react-icons/io5";
 
-export default function BannerHome() {
+interface BannerHomeProps {
+  bannerFor: string;
+  title: string;
+  description: string;
+  bannerImage: string;
+}
+
+export default function BannerHome({ bannerFor, title, description, bannerImage }: BannerHomeProps) {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
   };
 
   return (
-    <section className="relative w-full h-full bg-[#1B263B] text-white flex justify-center items-center">
+    <section className="relative w-full h-full bg-[#1B263B] text-white flex justify-center items-center pt-6">
       {/* Left Images */}
       <>
         {/* Decorative Circle */}
@@ -44,27 +52,27 @@ export default function BannerHome() {
         <div className="flex items-center justify-between">
           <div className="max-w-[679px] w-full space-y-8">
             <h1 className="text-[40px] sm:text-[48px] md:text-[56px] font-bold leading-tight max-w-[700px] z-10">
-              Learn a New Skill Every day, Anytime, & your Suitable Schedule.
+             {title || "Banner title"}
             </h1>
             <p>
-              It’s important to note that online education also comes with it’s
-              own set of challenges, such as potential feeling of isolation, the
-              need for strong self-discipline.
+              {description || "Banner description"}
             </p>
-            <form onSubmit={handleSearch}>
-              <div className="w-full max-w-[550px] h-fit flex justify-center items-center">
-                <input
-                  type="text"
-                  placeholder="Search arts or artists"
-                  className="w-full h-[60px] px-4 py-2 bg-white text-[#262626] rounded-l-full border border-white focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                />
-                <button
-                  type="submit"
-                  className="w-[145px] h-[60px] bg-yellow-500 text-[#262626] px-6 py-2 rounded-r-full hover:bg-yellow-600 transition-colors"
-                >
-                  Search
-                </button>
-              </div>
+            <form
+              onSubmit={handleSearch}
+              className="w-full max-w-[550px] h-fit flex justify-center items-center relative"
+            >
+              <IoSearch className="text-xl text-[#262626] absolute left-4" />
+              <input
+                type="text"
+                placeholder="Search arts or artists"
+                className="w-full h-[60px] px-4 py-2 pl-12 bg-white text-[#262626] placeholder:text-[#909090] rounded-l-full border border-white focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              />
+              <button
+                type="submit"
+                className="w-[145px] h-[60px] bg-yellow-500 text-[#262626] font-semibold px-6 py-2 rounded-r-full hover:bg-yellow-600 transition-colors"
+              >
+                Search
+              </button>
             </form>
 
             <div>
@@ -96,17 +104,17 @@ export default function BannerHome() {
           </div>
           <div className="">
             <Image
-              src="/images/banner/home-hero-image.png"
+              src={bannerImage}
               alt="Hero Image"
               width={600}
-              height={400}
-              className="max-w-[600px] w-full h-auto object-contain"
+              height={520}
+              className="max-w-[600px] w-full max-h-[520px] h-auto object-contain"
             />
           </div>
         </div>
 
         {/* Bottom Cards */}
-        <BottomCards />
+        {bannerFor === "home" && <BottomCards />}
       </div>
 
       {/* Right Images */}

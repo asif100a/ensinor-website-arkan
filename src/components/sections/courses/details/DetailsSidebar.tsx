@@ -1,41 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { FaStar } from "react-icons/fa";
-
-interface Overview {
-  name: string;
-  icon: string;
-  details: string;
-}
+import { overviews, popularTags } from "../../../../../public/data/courseDetails";
+import { Overview } from "@/types";
 
 export default function DetailsSidebar() {
-  const popularTags = [
-    "blog",
-    "business",
-    "theme",
-    "data science",
-    "web development",
-    "tips",
-    "machinelearning",
-  ];
-  const overviews: Overview[] = [
-    { name: "Lectures", icon: "/icons/book.svg", details: "48" },
-    { name: "Duration", icon: "/icons/clock.svg", details: "35h 07m" },
-    {
-      name: "Course type",
-      icon: "/icons/intelligence.svg",
-      details: "Beginner",
-    },
-    { name: "Language", icon: "/icons/globe.svg", details: "English" },
-    {
-      name: "Deadline",
-      icon: "/icons/deadline-calendar.svg",
-      details: "25 Sep 2025",
-    },
-    { name: "Certificate", icon: "/icons/certificate.svg", details: "Yes" },
-  ];
+  
   return (
     <aside className="w-[424px] text-[#262626] text-lg space-y-8">
       {/* Course details */}
@@ -86,12 +59,16 @@ export default function DetailsSidebar() {
         </p>
         {/* Buttons */}
         <div className="flex items-center gap-6">
-          <button className="w-full bg-white text-black-primary border-2 border-yellow-primary py-2 rounded-lg font-medium hover:bg-yellow-500">
-            Add to Card
-          </button>
-          <button className="w-full bg-yellow-400 text-white py-2 rounded-lg font-medium hover:bg-yellow-500">
-            Buy Now
-          </button>
+          <Link href="#" className="w-full">
+            <button className="w-full bg-white text-black-primary border-2 border-yellow-primary py-2 rounded-lg font-medium hover:bg-yellow-500 cursor-pointer">
+              Add to Card
+            </button>
+          </Link>
+          <Link href="/courses/buy-course" className="w-full">
+            <button className="w-full bg-yellow-400 text-white py-2 rounded-lg font-medium hover:bg-yellow-500 cursor-pointer">
+              Buy Now
+            </button>
+          </Link>
         </div>
       </div>
 

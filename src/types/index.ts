@@ -40,6 +40,26 @@ export interface BookTypes {
 }
 
 export interface BannerLink {
-    title: string;
-    url: string;
+  name: string;
+  url: string;
+}
+
+export interface Overview {
+  name: string;
+  icon: string;
+  details: string;
+}
+
+export interface Page {
+  title: string;
+  href: string;
+}
+
+export interface Instructor {
+  name: string;
+  thumbnail: string;
+  designation: string;
+  description: string;
+  experience: string;
+  ratings: string;
 }
