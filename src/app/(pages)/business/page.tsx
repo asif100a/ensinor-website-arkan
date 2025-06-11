@@ -2,6 +2,7 @@ import BannerHome from "@/components/Layout/Banners/BannerHome";
 import ForBusinesses from "@/components/sections/business/ForBusinesses";
 import HowItWorks from "@/components/sections/business/HowItWorks";
 import KeyFeatures from "@/components/sections/business/KeyFeatures";
+import SubscriptionPlans from "@/components/sections/business/SubscriptionPlans";
 import React from "react";
 
 export default function Business() {
@@ -19,6 +20,7 @@ Your Customers."
         <KeyFeatures />
         <ForBusinesses />
         <HowItWorks />
+        <SubscriptionPlans />
       </div>
     </div>
   );
