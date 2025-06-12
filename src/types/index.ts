@@ -63,3 +63,15 @@ export interface Instructor {
   experience: string;
   ratings: string;
 }
+
+export interface Blog {
+    title: string;
+    description: string;
+    thumbnail: string;
+    blogger: {
+        name: string;
+        thumbnail: string;
+    };
+    views: string;
+    postDate: string;
+}
