@@ -1,8 +1,8 @@
 import ImproveSkills from "@/components/sections/home/ImproveSkills";
-import BannerHome from "@/components/Layout/Banners/BannerHome";
+import BannerLong from "@/components/Layout/Banners/BannerLong";
 import MostPopularCourses from "@/components/sections/home/MostPopularCourses";
 import AboutUs from "@/components/sections/home/AboutUs";
-import WorkWithUs from "@/components/sections/home/WorkWithUs";
+import PartnerCompanies from "@/components/sections/PartnerCompanies";
 import TrendingCourses from "@/components/sections/home/TrendingCourses";
 import TrendingEvents from "@/components/sections/home/TrendingEvents";
 import TrendingBooks from "@/components/sections/home/TrendingBooks";
@@ -10,7 +10,7 @@ import TrendingBooks from "@/components/sections/home/TrendingBooks";
 export default function Home() {
   return (
     <div className="overflow-hidden">
-      <BannerHome
+      <BannerLong
         bannerFor={"home"}
         title="Learn a New Skill Every day, Anytime, & your Suitable Schedule."
         description="It’s important to note that online education also comes with it’s
@@ -21,7 +21,10 @@ export default function Home() {
       <ImproveSkills />
       <MostPopularCourses />
       <AboutUs />
-      <WorkWithUs />
+      <PartnerCompanies
+      title="Work with Us"
+      description="Our platform gives you the freedom to grow your skills at your own pace."
+      />
       <TrendingCourses />
       <TrendingEvents />
       <TrendingBooks />

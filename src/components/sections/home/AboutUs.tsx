@@ -5,16 +5,30 @@ import { FaStar } from "react-icons/fa";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
 export default function AboutUs() {
+  const testimonials = [
+    {
+      clientName: "Shahid Hasan",
+      designation: "UI/UX Design",
+      ratings: 5,
+      text: "Explore a diverse selection of courses all in one platform, designed to cater to various learning needs and interests, making education more accessible and convenient. Explore a diverse selection of courses all in one platform, designed to cater to various learning needs and interests, making education",
+    },
+  ];
   return (
     <section className="custom-container flex justify-between items-start">
       {/* Left Side */}
       <div className="space-y-8">
-        {[1, 2].map((item, index) => (
-          <Testimonial key={index} />
+        {[...testimonials, ...testimonials].map((testimonial, index) => (
+          <Testimonial
+            key={index}
+            clientName={testimonial.clientName}
+            designation={testimonial.designation}
+            ratings={testimonial.ratings}
+            text={testimonial.text}
+          />
         ))}
 
         <div className="flex items-center gap-8">
-            {/* Previous Button */}
+          {/* Previous Button */}
           <button className="bg-[#E6E6E6] text-[#8D8D8D] w-[60px] h-[60px] rounded-full flex items-center justify-center hover:bg-[#E6E6E6] transition-colors">
             <FaArrowLeftLong className="text-xl" />
           </button>

@@ -5,20 +5,25 @@ import Image from "next/image";
 import React from "react";
 import { IoSearch } from "react-icons/io5";
 
-interface BannerHomeProps {
+interface BannerLongProps {
   bannerFor: string;
   title: string;
   description: string;
   bannerImage: string;
 }
 
-export default function BannerHome({ bannerFor, title, description, bannerImage }: BannerHomeProps) {
+export default function BannerLong({
+  bannerFor,
+  title,
+  description,
+  bannerImage,
+}: BannerLongProps) {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
   };
 
   return (
-    <section className="relative w-full h-full bg-[#1B263B] text-white flex justify-center items-center pt-6">
+    <section className="relative w-full h-full bg-[#1B263B] text-white flex justify-center items-center py-12">
       {/* Left Images */}
       <>
         {/* Decorative Circle */}
@@ -52,11 +57,9 @@ export default function BannerHome({ bannerFor, title, description, bannerImage 
         <div className="flex items-center justify-between">
           <div className="max-w-[679px] w-full space-y-8">
             <h1 className="text-[40px] sm:text-[48px] md:text-[56px] font-bold leading-tight max-w-[700px] z-10">
-             {title || "Banner title"}
+              {title || "Banner title"}
             </h1>
-            <p>
-              {description || "Banner description"}
-            </p>
+            <p>{description || "Banner description"}</p>
             <form
               onSubmit={handleSearch}
               className="w-full max-w-[550px] h-fit flex justify-center items-center relative"
@@ -75,6 +78,7 @@ export default function BannerHome({ bannerFor, title, description, bannerImage 
               </button>
             </form>
 
+            {/* Enrolled Students (images) */}
             <div>
               <p className="font-semibold">Our Enrolled Students</p>
               <div className="h-fit w-fit flex items-center -space-x-3">

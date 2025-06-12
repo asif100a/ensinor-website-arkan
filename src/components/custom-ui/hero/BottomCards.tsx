@@ -24,28 +24,33 @@ export default function BottomCards() {
       description: "Active Students",
     },
   ];
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative -bottom-[70px] z-10">
-      {cards.map((card, index) => (
-        <div
-          key={index}
-          className="bg-white w-full h-[140px] rounded-lg shadow flex justify-center items-center gap-5"
-        >
-          <Image
-            src={card.image}
-            alt={`Card Image ${index + 1}`}
-            width={70}
-            height={70}
-            className="w-[70px] h-[70px] object-cover rounded-t-lg"
-          />
-          <div>
-            <h3 className="font-semibold text-[#505050] text-[38px]">{card.title}</h3>
-            <p className="text-[#303030] text-lg font-semibold">
-              {card.description}
-            </p>
+    <div className="pt-16">
+      <div className="absolute -bottom-18 max-w-[1322px] w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 z-10">
+        {cards.map((card, index) => (
+          <div
+            key={index}
+            className="bg-white w-full h-[140px] rounded-lg shadow flex justify-center items-center gap-5"
+          >
+            <Image
+              src={card.image}
+              alt={`Card Image ${index + 1}`}
+              width={70}
+              height={70}
+              className="w-[70px] h-[70px] object-cover rounded-t-lg"
+            />
+            <div>
+              <h3 className="font-semibold text-[#505050] text-[38px]">
+                {card.title}
+              </h3>
+              <p className="text-[#303030] text-lg font-semibold">
+                {card.description}
+              </p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

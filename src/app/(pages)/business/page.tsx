@@ -1,14 +1,17 @@
-import BannerHome from "@/components/Layout/Banners/BannerHome";
+import BannerLong from "@/components/Layout/Banners/BannerLong";
 import ForBusinesses from "@/components/sections/business/ForBusinesses";
 import HowItWorks from "@/components/sections/business/HowItWorks";
 import KeyFeatures from "@/components/sections/business/KeyFeatures";
+import RequestADemo from "@/components/sections/business/RequestADemo";
 import SubscriptionPlans from "@/components/sections/business/SubscriptionPlans";
+import WhatOurClientsSay from "@/components/sections/business/WhatOurClientsSay";
+import PartnerCompanies from "@/components/sections/PartnerCompanies";
 import React from "react";
 
 export default function Business() {
   return (
     <div>
-      <BannerHome
+      <BannerLong
         bannerFor="business"
         title="Train Your Team. Engage
 Your Customers."
@@ -16,12 +19,15 @@ Your Customers."
         bannerImage="/images/business/business-banner.png"
       />
 
-      <div>
+      <main>
         <KeyFeatures />
         <ForBusinesses />
         <HowItWorks />
         <SubscriptionPlans />
-      </div>
+        <PartnerCompanies title='Partners who trust Us' description='Our platform gives you the freedom to grow your skills at your own pace.' />
+        <RequestADemo />
+        <WhatOurClientsSay />
+      </main>
     </div>
   );
 }

@@ -1,11 +1,23 @@
 import Image from "next/image";
 import React from "react";
 
-export default function Testimonial() {
+interface TestimonialProps {
+  clientName: string
+  designation: string
+  ratings: number
+  text: string
+}
+
+export default function Testimonial({
+  clientName,
+  designation,
+  ratings,
+  text
+}: TestimonialProps) {
   return (
-    <div className="max-w-sm bg-gray-secondary rounded-[12px] text-lg p-4">
+    <div className="max-w-[526px] w-full bg-gray-secondary rounded-[12px] text-lg p-4">
       {/* Image and Info Section */}
-      <div className="flex items-center space-x-4">
+      <div className="flex justify-center items-center space-x-4">
         <Image
           src="/images/home/about-us/user1.png"
           alt="Profile"
@@ -14,14 +26,14 @@ export default function Testimonial() {
           className="w-20 h-20 rounded-full object-cover"
         />
         <div>
-          <h3 className="text-lg font-semibold text-gray-800">Shahid Hasan</h3>
-          <p className="text-sm text-gray-600">UI/UX Design</p>
+          <h3 className="text-lg font-semibold text-gray-800">{clientName}</h3>
+          <p className="text-sm text-gray-600">{designation}</p>
         </div>
       </div>
 
       {/* Rating Section */}
-      <div className="flex items-center mt-2">
-        {Array(5)
+      <div className="flex justify-center items-center mt-2">
+        {Array(ratings)
           .fill(null)
           .map((_, i) => (
             <svg
@@ -37,12 +49,8 @@ export default function Testimonial() {
       </div>
 
       {/* Description Section */}
-      <p className="text-[#707070] mt-2">
-        Explore a diverse selection of courses all in one platform, designed to
-        cater to various learning needs and interests, making education more
-        accessible and convenient. Explore a diverse selection of courses all in
-        one platform, designed to cater to various learning needs and interests,
-        making education
+      <p className="text-[#707070] text-center mt-2">
+        {text}
       </p>
     </div>
   );
