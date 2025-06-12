@@ -7,7 +7,7 @@ import TopBar from "@/components/sections/courses/TopBar";
 import CourseCard from "@/components/custom-ui/cards/CourseCard";
 import { coursesData } from "../../../../public/data/demo";
 import { PaginationBar } from "@/components/custom-ui/PaginationBar";
-import GreatConversation from "@/components/sections/courses/GreatConversation";
+import GreatConversation from "@/components/sections/GreatConversation";
 
 export default function Courses() {
   const link: BannerLink = { name: "Courses", url: "/courses" };

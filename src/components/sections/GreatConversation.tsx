@@ -12,8 +12,7 @@ export default function GreatConversation() {
   };
 
   return (
-    <section className="mb-24 mt-6">
-      <div className="custom-container bg-yellow-secondary rounded-4xl relative overflow-hidden">
+      <section className="custom-container bg-yellow-secondary rounded-4xl relative overflow-hidden">
         <div className="flex flex-row items-center justify-between h-[326px] px-20">
           <div className="max-w-[642px] w-full space-y-8 z-10">
             <div className="space-y-6">
@@ -83,7 +82,6 @@ export default function GreatConversation() {
             </div>
           </>
         </div>
-      </div>
-    </section>
+      </section>
   );
 }

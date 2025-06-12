@@ -16,7 +16,7 @@ export default function PartnerCompanies({title, description}: PartnerCompaniesP
     "/images/home/work-with-us/vs-studio.png",
   ];
   return (
-    <section className="w-full h-fit bg-gray-primary relative overflow-hidden">
+    <section className="w-full h-fit bg-gray-primary relative overflow-hidden my-16">
       <div className="custom-container space-y-12">
         <div className="w-full space-y-2 text-center">
           <h1 className="text-[36px] sm:text-[40px] md:text-[48px] font-bold text-black-primary leading-tight w-full z-10">

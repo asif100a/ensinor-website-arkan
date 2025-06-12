@@ -1,4 +1,5 @@
 import BannerLong from "@/components/Layout/Banners/BannerLong";
+import FAQ from "@/components/sections/business/FAQ";
 import ForBusinesses from "@/components/sections/business/ForBusinesses";
 import HowItWorks from "@/components/sections/business/HowItWorks";
 import KeyFeatures from "@/components/sections/business/KeyFeatures";
@@ -27,6 +28,7 @@ Your Customers."
         <PartnerCompanies title='Partners who trust Us' description='Our platform gives you the freedom to grow your skills at your own pace.' />
         <RequestADemo />
         <WhatOurClientsSay />
+        <FAQ />
       </main>
     </div>
   );
