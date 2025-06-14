@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react'
+import { FaAngleDown } from 'react-icons/fa';
 
 export default function Sidebar() {
   return (
@@ -37,28 +38,7 @@ export default function Sidebar() {
                 <input type="radio" name="category" className="form-radio text-yellow-500" />
                 <span className="">Writing (850)</span>
               </label>
-              <a href="#" className="text-yellow-500 hover:underline">See more ↓</a>
-            </div>
-          </div>
-
-          {/* Price Level Section */}
-         <div className="mb-6 w-full bg-gray-background p-4 rounded-xl">
-            <h3 className="text-2xl font-semibold border-b border-[#BFBFBF] pb-3 mb-3">Price level</h3>
-            <div className="flex gap-3">
-              <button className="w-full bg-white py-2 rounded-md hover:bg-gray-100">All</button>
-              <button className="w-full bg-white py-2 rounded-md hover:bg-gray-100">Free</button>
-              <button className="w-full bg-white py-2 rounded-md hover:bg-gray-100">Paid</button>
-            </div>
-          </div>
-
-          {/* Skill Level Section */}
-         <div className="mb-6 w-full bg-gray-background p-4 rounded-xl">
-            <h3 className="text-2xl font-semibold border-b border-[#BFBFBF] pb-3 mb-3">Skill Level</h3>
-             <div className="flex flex-wrap gap-3">
-              <button className="w-fit bg-white py-2 px-4  rounded-md hover:bg-gray-100">All levels</button>
-              <button className="w-fit bg-white py-2 px-4  rounded-md hover:bg-gray-100">Advanced</button>
-              <button className="w-fit bg-white py-2 px-4 rounded-md hover:bg-gray-100">Intermediate</button>
-              <button className="w-fit bg-white py-2 px-4  rounded-md hover:bg-gray-100">Beginner</button>
+              <a href="#" className="text-yellow-500 hover:underline flex items-center">See more <FaAngleDown /></a>
             </div>
           </div>
 

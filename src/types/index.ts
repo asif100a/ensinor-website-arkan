@@ -76,3 +76,12 @@ export interface Blog {
   views: string;
   postDate: string;
 }
+
+export interface ShopTypes {
+  _id: string
+  thumbnail: string
+  title: string
+  description: string
+  productManager: string
+  price: number
+}
