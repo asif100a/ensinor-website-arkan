@@ -3,18 +3,18 @@ import { Page } from "@/types";
 export const pages: Page[] = [
   {
     title: "About Us",
-    href: "about-us",
+    href: "/about-us",
   },
   {
     title: "Blogs",
-    href: "blogs",
+    href: "/blogs",
   },
   {
     title: "FAQ",
-    href: "faq",
+    href: "/faq",
   },
   {
     title: "Contact Us",
-    href: "contact-us",
+    href: "/contact-us",
   },
 ];

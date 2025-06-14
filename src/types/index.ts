@@ -65,13 +65,14 @@ export interface Instructor {
 }
 
 export interface Blog {
-    title: string;
-    description: string;
+  _id: string;
+  title: string;
+  description: string;
+  thumbnail: string;
+  blogger: {
+    name: string;
     thumbnail: string;
-    blogger: {
-        name: string;
-        thumbnail: string;
-    };
-    views: string;
-    postDate: string;
+  };
+  views: string;
+  postDate: string;
 }

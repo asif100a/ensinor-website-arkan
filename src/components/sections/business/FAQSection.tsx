@@ -18,7 +18,7 @@ const faqs = [
   { question: "What happens after the trial ends?", answer: commonAnser },
 ];
 
-export default function FAQ() {
+export default function FAQSection() {
   const [isFaqOpen, setIsFaqOpen] = useState<boolean>(false);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 

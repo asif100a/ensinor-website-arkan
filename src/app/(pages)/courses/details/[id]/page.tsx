@@ -10,7 +10,7 @@ import { courseCurriculums, learningContents } from "../../../../../../public/da
 export default function CourseDetails() {
 
   return (
-    <div className="custom-container flex gap-6 space-y-10">
+    <main className="custom-container flex gap-6">
       <section className="space-y-8">
         {/* Title & Description */}
         <div className="w-full space-y-8 flex justify-between items-end">
@@ -140,6 +140,6 @@ export default function CourseDetails() {
       <div>
         <DetailsSidebar />
       </div>
-    </div>
+    </main>
   );
 }

@@ -17,14 +17,15 @@ export default function BlogCards() {
   const [activeTab, setActiveTab] = useState<string>("All");
 
   return (
-    <section>
+    <section className="space-y-10">
       <div className="flex items-center gap-8">
         {tabs.map((tab: string) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`text-black-normal text-lg font-medium ${
-              tab === activeTab && "bg-[#281E12] text-white px-4 py-1"
+            className={`text-black-normal text-lg font-medium cursor-pointer ${
+              tab === activeTab &&
+              "bg-[#281E12] text-white px-4 py-1 rounded-[70px]"
             }`}
           >
             {tab}
@@ -33,17 +34,20 @@ export default function BlogCards() {
       </div>
 
       {/* Blog Cards */}
-      {blogs.map((blog: Blog) => (
-        <BlogCard
-          key={blog.title}
-          thumbnail={blog.thumbnail}
-          title={blog.title}
-          description={blog.description}
-          blogger={blog.blogger}
-          views={blog.views}
-          postDate={blog.postDate}
-        />
-      ))}
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
+        {blogs.map((blog: Blog) => (
+          <BlogCard
+            _id={'1'}
+            key={blog.title}
+            thumbnail={blog.thumbnail}
+            title={blog.title}
+            description={blog.description}
+            blogger={blog.blogger}
+            views={blog.views}
+            postDate={blog.postDate}
+          />
+        ))}
+      </div>
     </section>
   );
 }
