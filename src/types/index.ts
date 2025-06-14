@@ -22,13 +22,13 @@ export interface TrendingCourseTypes {
   coursePrice: string;
 }
 
-export interface TrendingEventTypes {
+export interface EventTypes {
+  _id: string;
   thumbnail: string;
   title: string;
   description: string;
   date: string;
   time: string;
-  href: string;
 }
 
 export interface BookTypes {
@@ -78,10 +78,10 @@ export interface Blog {
 }
 
 export interface ShopTypes {
-  _id: string
-  thumbnail: string
-  title: string
-  description: string
-  productManager: string
-  price: number
+  _id: string;
+  thumbnail: string;
+  title: string;
+  description: string;
+  productManager: string;
+  price: number;
 }

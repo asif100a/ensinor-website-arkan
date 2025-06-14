@@ -3,11 +3,11 @@
 import BannerPrimary from "@/components/Layout/Banners/BannerPrimary";
 import React from "react";
 import "@/custom_style/style.css";
-import Sidebar from "@/components/sections/shop/Sidebar";
-import TopBar from "@/components/sections/shop/TopBar";
 import ShopCard from "@/components/custom-ui/cards/ShopCard";
 import { ShopTypes } from "@/types";
 import { PaginationBar } from "@/components/custom-ui/PaginationBar";
+import SidebarCommon from "@/components/custom-ui/sidebar/SidebarCommon";
+import TopBarCommon from "@/components/custom-ui/topBars/TopBarCommon";
 
 export const shopData: ShopTypes = {
     _id: '1',
@@ -26,9 +26,9 @@ export default function Shop() {
 
       <main className="custom-container">
         <section className="flex gap-6">
-          <Sidebar />
+          <SidebarCommon />
           <div className="w-full space-y-8">
-            <TopBar />
+            <TopBarCommon />
 
             {/* Courses Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

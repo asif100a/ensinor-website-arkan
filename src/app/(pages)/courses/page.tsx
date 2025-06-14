@@ -3,11 +3,11 @@ import Sidebar from "@/components/sections/courses/Sidebar";
 import { BannerLink } from "@/types";
 import React from "react";
 import "@/custom_style/style.css";
-import TopBar from "@/components/sections/courses/TopBar";
 import CourseCard from "@/components/custom-ui/cards/CourseCard";
 import { coursesData } from "../../../../public/data/demo";
 import { PaginationBar } from "@/components/custom-ui/PaginationBar";
 import GreatConversation from "@/components/sections/GreatConversation";
+import TopBarCommon from "@/components/custom-ui/topBars/TopBarCommon";
 
 export default function Courses() {
   const link: BannerLink = { name: "Courses", url: "/courses" };
@@ -24,7 +24,7 @@ export default function Courses() {
       <section className="custom-container flex gap-6">
         <Sidebar />
         <div className="w-full space-y-8">
-          <TopBar />
+          <TopBarCommon />
 
           {/* Courses Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

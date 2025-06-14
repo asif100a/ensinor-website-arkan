@@ -1,7 +1,7 @@
 import React from "react";
-import { IoIosArrowDown, IoIosSearch } from "react-icons/io";
+import { IoIosSearch, IoIosArrowDown } from "react-icons/io";
 
-export default function TopBar() {
+export default function TopBarCommon() {
   return (
     <section className="w-full flex items-center gap-6">
       <div className="text-lg w-fit h-fit relative">

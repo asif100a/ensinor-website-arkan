@@ -1,6 +1,7 @@
-import TrendingEventCard from "@/components/custom-ui/cards/TrendingEventCard";
+import EventCard from "@/components/custom-ui/cards/EventCard";
 import React from "react";
-import { trendingEventsData } from "../../../../public/data/trendingEventsData";
+import { eventsData } from "../../../../public/data/eventsData";
+import { EventTypes } from "@/types";
 
 export default function TrendingEvents() {
   return (
@@ -18,15 +19,15 @@ export default function TrendingEvents() {
 
         {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {trendingEventsData.map((event, index) => (
+          {eventsData.map((event: EventTypes, index: number) => (
             <div key={index}>
-              <TrendingEventCard
+              <EventCard
+                _id={index + ""}
                 thumbnail={event.thumbnail}
                 title={event.title}
                 description={event.description}
                 date={event.date}
                 time={event.time}
-                href="#"
               />
             </div>
           ))}

@@ -1,17 +1,18 @@
-import { TrendingEventTypes } from "@/types";
+import { EventTypes } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export default function TrendingEventCard({
+export default function EventCard({
+  _id,
   thumbnail,
   title,
   description,
   date,
   time,
-}: TrendingEventTypes) {
+}: EventTypes) {
   return (
-    <div className="max-w-xs bg-[#F3F6F7] text-lg rounded-[12px] overflow-hidden p-5 space-y-4">
+    <div className="w-full bg-[#F3F6F7] text-lg rounded-[12px] overflow-hidden p-5 space-y-4">
       {/* Image Section */}
       <div className="relative space-y-4">
         <Image
@@ -24,7 +25,7 @@ export default function TrendingEventCard({
         {/* Badge Section */}
         <div className="flex items-center justify-between">
           {/* Date */}
-          <p className="flex items-center gap-2">
+          <p className="w-fit flex items-center gap-1">
             <Image
               src="/icons/calendar.svg"
               alt="date"
@@ -32,12 +33,14 @@ export default function TrendingEventCard({
               height={18}
               className="w-[18px] h-[18px] object-contain"
             />
-            <span className={`text-black-secondary font-semibold px-2.5 py-1 rounded`}>
+            <span
+              className={`text-black-secondary text-base text-nowrap font-semibold px-2.5 py-1 rounded`}
+            >
               {date || "Event Date"}
             </span>
           </p>
           {/* Time */}
-          <p className="flex items-center gap-2">
+          <p className="w-fit flex items-center gap-0">
             <Image
               src="/icons/clock.svg"
               alt="time"
@@ -45,7 +48,9 @@ export default function TrendingEventCard({
               height={20}
               className="w-[20px] h-[20px] object-contain"
             />
-            <span className={`text-black-secondary font-semibold px-2.5 py-1 rounded`}>
+            <span
+              className={`text-black-secondary text-base text-nowrap font-semibold px-2.5 py-1 rounded`}
+            >
               {time || "Event Time"}
             </span>
           </p>
@@ -55,14 +60,17 @@ export default function TrendingEventCard({
       {/* Content Section */}
       <div className="space-y-4">
         {/* Title */}
-        <h2 className="text-xl font-medium text-black-primary">
+        <h2 className="text-xl font-medium text-black-primary hover:text-yellow-primary">
           {title || "Course Title"}
         </h2>
         {/* Description */}
         <p className="text-lg text-black-secondary">
           {description || "Course Description"}
         </p>
-        <Link href="#" className="flex items-center gap-1.5 text-black-primary text-lg font-medium">
+        <Link
+          href={`/events/details/${_id}`}
+          className="flex items-center gap-1.5 text-black-primary text-lg font-medium"
+        >
           <span>Learn more</span>
           <Image
             src="/icons/curve-arrow.svg"

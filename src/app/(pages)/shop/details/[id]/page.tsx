@@ -81,7 +81,7 @@ export default function ShopDetails() {
           </div>
         </section>
 
-        {isPopupOpen && <PaymentSuccessful setIsPopupOpen={setIsPopupOpen} />}
+        {isPopupOpen && <PaymentSuccessful />}
       </main>
     </div>
   );

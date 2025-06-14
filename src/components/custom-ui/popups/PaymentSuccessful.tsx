@@ -2,13 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-interface PaymentSuccessfulProps {
-  setIsPopupOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
+// interface PaymentSuccessfulProps {
+  
+// }
 
-export default function PaymentSuccessful({
-  setIsPopupOpen,
-}: PaymentSuccessfulProps) {
+export default function PaymentSuccessful() {
   return (
     <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-20">
       <div className="max-w-[550px] w-full bg-white p-6 rounded-lg shadow-lg text-center space-y-8">
