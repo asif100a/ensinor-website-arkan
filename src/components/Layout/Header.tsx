@@ -78,9 +78,9 @@ const Header = () => {
             />
           </div>
         </Link>
-        <NavigationMenu viewport={false} className="w-full mx-auto space-x-3">
-          <NavigationMenuList className="flex gap-6 border-r border-white px-3 shadow-none">
-            <ul className="flex items-center gap-6">
+        <NavigationMenu viewport={false} className="mx-auto space-x-3">
+          <NavigationMenuList className="w-full flex gap-6 border-r border-white shadow-none">
+            <ul className="w-full flex items-center gap-6">
               {links.slice(0, 4).map((link: Link) => (
                 <li key={link.name}>
                   <Link
@@ -142,8 +142,8 @@ const Header = () => {
                 />
                 <span>EN</span>
               </NavigationMenuTrigger>
-              <NavigationMenuContent className="z-20 absolute bg-white text-black-primary w-[90vw] max-w-[600px] mx-auto rounded-lg shadow-lg p-4 language-dropdown">
-                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+              <NavigationMenuContent className="z-20 absolute bg-white text-black-primary w-full mx-auto rounded-lg shadow-lg p-4 language-dropdown">
+                <ul className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                   {countryCodes.map((code) => (
                     <li key={code} className="flex items-center justify-center">
                       <button
@@ -174,15 +174,14 @@ const Header = () => {
                 </Link>
               </li>
             </ul>
+            {/* Login Button */}
+            <Link href="/login">
+              <Button className="bg-[#FFDE59] hover:bg-[#fee88f] text-[#262626] cursor-pointer">
+                Login
+              </Button>
+            </Link>
           </NavigationMenuList>
         </NavigationMenu>
-
-        {/* Login Button */}
-        <Link href="/login">
-          <Button className="bg-[#FFDE59] hover:bg-[#fee88f] text-[#262626] cursor-pointer">
-            Login
-          </Button>
-        </Link>
       </div>
     </header>
   );

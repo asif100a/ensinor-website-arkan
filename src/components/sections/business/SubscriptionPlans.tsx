@@ -1,51 +1,55 @@
-import Image from "next/image";
-import React from "react";
+"use client";
 
+import { getCapitalize } from "@/lib/utils";
+import Image from "next/image";
+import React, { useState } from "react";
+
+const plans = [
+  {
+    name: "NGO",
+    price: 199,
+    icon: "/icons/graduation.svg",
+    planType: "mo",
+    category: "Non-profits",
+    facilities: [
+      "Up to 50 users",
+      "5 training courses",
+      "Basic analytics",
+      "Email support",
+    ],
+  },
+  {
+    name: "SME",
+    price: 399,
+    icon: "/icons/building-house.svg",
+    planType: "mo",
+    category: "Most popular",
+    facilities: [
+      "Up to 200 users",
+      "15 training courses",
+      "Advanced analytics",
+      "Priority support",
+      "Custom branding",
+    ],
+  },
+  {
+    name: "Enterprise",
+    price: 999,
+    icon: "/icons/development.svg",
+    planType: "year",
+    category: "Full Power",
+    facilities: [
+      "Unlimited users",
+      "Unlimited courses",
+      "Full analytics suite",
+      "Dedicated account manager",
+      "Advanced security features",
+      "API access",
+    ],
+  },
+];
 export default function SubscriptionPlans() {
-  const plans = [
-    {
-      name: "NGO",
-      price: 199,
-      icon: "/icons/graduation.svg",
-      planType: "mo",
-      category: "Non-profits",
-      facilities: [
-        "Up to 50 users",
-        "5 training courses",
-        "Basic analytics",
-        "Email support",
-      ],
-    },
-    {
-      name: "SME",
-      price: 399,
-      icon: "/icons/building-house.svg",
-      planType: "mo",
-      category: "Most popular",
-      facilities: [
-        "Up to 200 users",
-        "15 training courses",
-        "Advanced analytics",
-        "Priority support",
-        "Custom branding",
-      ],
-    },
-    {
-      name: "Enterprise",
-      price: 999,
-      icon: "/icons/development.svg",
-      planType: "year",
-      category: "Full Power",
-      facilities: [
-        "Unlimited users",
-        "Unlimited courses",
-        "Full analytics suite",
-        "Dedicated account manager",
-        "Advanced security features",
-        "API access",
-      ],
-    },
-  ];
+  const [activeTab, setActiveTab] = useState<string>("monthly");
 
   return (
     <section className="custom-container space-y-12">
@@ -59,15 +63,16 @@ export default function SubscriptionPlans() {
         </p>
 
         {/* Plan Toggle */}
-        <div className="w-fit overflow-hidden p-0.5 mt-6 border rounded-lg dark:border-gray-700 mx-auto">
-          <div className="sm:-mx-0.5 flex">
-            <button className=" focus:outline-none px-3 w-1/2 sm:w-auto py-1 sm:mx-0.5 text-white bg-blue-500 rounded-lg">
-              Monthly
+        <div className="max-w-[270px] w-full overflow-hidden p-1.5 bg-gray-background rounded-lg mx-auto flex items-center gap-2">
+          {["monthly", "yearly"].map((key: string) => (
+            <button
+              key={key}
+              onClick={() => setActiveTab(key)}
+              className={`w-full focus:outline-none px-3 py-1 text-black-primary text-lg font-medium cursor-pointer ${key === activeTab ? 'bg-yellow-primary' : 'bg-transparent hover:bg-[#e1e3e4]'} rounded-lg`}
+            >
+              {getCapitalize(key)}
             </button>
-            <button className=" focus:outline-none px-3 w-1/2 sm:w-auto py-1 sm:mx-0.5 text-gray-800 dark:text-gray-200 dark:hover:bg-gray-800 bg-transparent rounded-lg hover:bg-gray-200">
-              Yearly
-            </button>
-          </div>
+          ))}
         </div>
       </div>
 

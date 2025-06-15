@@ -11,7 +11,7 @@ import React from "react";
 
 export default function Business() {
   return (
-    <div>
+    <div className="overflow-hidden">
       <BannerLong
         bannerFor="business"
         title="Train Your Team. Engage
