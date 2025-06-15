@@ -2,6 +2,7 @@ import { EventTypes } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { GoArrowUpRight } from "react-icons/go";
 
 export default function EventCard({
   _id,
@@ -60,7 +61,7 @@ export default function EventCard({
       {/* Content Section */}
       <div className="space-y-4">
         {/* Title */}
-        <h2 className="text-xl font-medium text-black-primary hover:text-yellow-primary">
+        <h2 className="text-xl font-medium text-black-primary">
           {title || "Course Title"}
         </h2>
         {/* Description */}
@@ -69,16 +70,10 @@ export default function EventCard({
         </p>
         <Link
           href={`/events/details/${_id}`}
-          className="flex items-center gap-1.5 text-black-primary text-lg font-medium"
+          className="flex items-center gap-1.5 text-black-primary text-lg font-medium hover:text-yellow-primary"
         >
           <span>Learn more</span>
-          <Image
-            src="/icons/curve-arrow.svg"
-            alt="curve-arrow"
-            width={18}
-            height={18}
-            className="w-[18px] h-[18px] object-contain"
-          />
+          <GoArrowUpRight className="text-2xl" />
         </Link>
       </div>
     </div>
