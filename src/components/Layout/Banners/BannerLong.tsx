@@ -55,9 +55,16 @@ export default function BannerLong({
       {/* Centered Contents */}
       <div className="max-w-[1322px] w-full mx-auto z-10">
         <div className="flex items-center justify-between">
-          <div className="max-w-[679px] w-full space-y-8">
-            <h1 className="text-[40px] sm:text-[48px] md:text-[56px] font-bold leading-tight max-w-[700px] z-10">
+          <div className="max-w-[679px] w-full space-y-8 relative">
+            <h1 className="text-[40px] sm:text-[48px] md:text-[56px] font-bold max-w-[700px] z-10 relative">
               {title || "Banner title"}
+              <Image
+                src="/images/banner/curve-line.png"
+                alt="curve-line"
+                width={244}
+                height={16}
+                className="max-w-[243px] w-full h-auto absolute top-20 left-50"
+              />
             </h1>
             <p>{description || "Banner description"}</p>
             <form
@@ -105,6 +112,15 @@ export default function BannerLong({
                 />
               </div>
             </div>
+
+            {/* Curve-Arrow */}
+            <Image
+              src='/images/banner/curve-arrow.png'
+              alt="Curve-Arrow"
+              width={218}
+              height={78}
+              className="absolute right-0 bottom-0 max-w-[218px] w-full max-h-[78px] h-auto object-contain"
+            />
           </div>
           <div className="">
             <Image

@@ -1,6 +1,23 @@
+import Link from "next/link";
 import React from "react";
 
-export default function EventRightSection() {
+interface EventRightSectionProps {
+  title: string;
+  description: string;
+  bgImage: string;
+}
+
+export default function EventRightSection({
+  title,
+  description,
+  bgImage,
+}: EventRightSectionProps) {
+  const query = new URLSearchParams({
+    title,
+    description,
+    bgImage
+  }).toString();
+  
   return (
     <div className="p-6 bg-gray-background text-black-primary rounded-xl space-y-8">
       <h4 className="text-[22px] font-semibold">This course includes</h4>
@@ -21,9 +38,11 @@ export default function EventRightSection() {
       </div>
 
       {/* Button */}
-      <button className="w-full bg-yellow-primary text-black-primary text-lg font-medium py-2 rounded hover:bg-yellow-500 cursor-pointer">
-        Buy Ticket
-      </button>
+      <Link href={`/events/buy-ticket?${query}`}>
+        <button className="w-full bg-yellow-primary text-black-primary text-lg font-medium py-2 rounded hover:bg-yellow-500 cursor-pointer">
+          Buy Ticket
+        </button>
+      </Link>
     </div>
   );
 }

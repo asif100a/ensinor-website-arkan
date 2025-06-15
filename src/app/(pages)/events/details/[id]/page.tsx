@@ -6,7 +6,6 @@ import Image from "next/image";
 import React from "react";
 
 export default function EventDetails() {
- 
 
   return (
     <main className="custom-container flex gap-6">
@@ -175,7 +174,9 @@ export default function EventDetails() {
       </section>
 
       <div className="w-full">
-        <EventRightSection />
+        <EventRightSection title="Behind Every Smile: The People Who Make It Happen" description="This event is designed to help you explore academic opportunity, connect with current students and faculty,
+
+" bgImage="/images/events/details/event-details.jpg" />
       </div>
     </main>
   );

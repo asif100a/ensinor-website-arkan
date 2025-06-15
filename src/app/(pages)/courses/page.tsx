@@ -46,7 +46,9 @@ export default function Courses() {
           <PaginationBar />
         </div>
       </section>
-      <GreatConversation />
+      <div className="pb-16">
+        <GreatConversation />
+      </div>
     </div>
   );
 }
