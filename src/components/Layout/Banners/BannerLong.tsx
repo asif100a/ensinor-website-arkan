@@ -148,7 +148,7 @@ export default function BannerLong({
 
         {/* Bottom Cards */}
         {bannerFor === "home" && (
-          <div className="hidden lg:block">
+          <div>
             <BottomCards />
           </div>
         )}

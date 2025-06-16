@@ -26,8 +26,8 @@ export default function BottomCards() {
   ];
 
   return (
-    <div className="pt-16">
-      <div className="absolute -bottom-18 max-w-[1322px] w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 z-10">
+    <div className="pt-0 lg:pt-16">
+      <div className="static lg:absolute -bottom-18 max-w-[1322px] w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 z-10">
         {cards.map((card, index) => (
           <div
             key={index}
