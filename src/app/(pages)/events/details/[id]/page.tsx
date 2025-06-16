@@ -6,9 +6,8 @@ import Image from "next/image";
 import React from "react";
 
 export default function EventDetails() {
-
   return (
-    <main className="custom-container flex gap-6">
+    <main className="custom-container flex flex-col lg:flex-row gap-6">
       <section className="space-y-8">
         <div className="relative">
           {/* Details image */}
@@ -174,9 +173,13 @@ export default function EventDetails() {
       </section>
 
       <div className="w-full">
-        <EventRightSection title="Behind Every Smile: The People Who Make It Happen" description="This event is designed to help you explore academic opportunity, connect with current students and faculty,
+        <EventRightSection
+          title="Behind Every Smile: The People Who Make It Happen"
+          description="This event is designed to help you explore academic opportunity, connect with current students and faculty,
 
-" bgImage="/images/events/details/event-details.jpg" />
+"
+          bgImage="/images/events/details/event-details.jpg"
+        />
       </div>
     </main>
   );

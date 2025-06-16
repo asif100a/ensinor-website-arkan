@@ -25,13 +25,13 @@ export default function Shop() {
       <BannerPrimary title="Shop" link={{ name: "Shop", url: "/shop" }} />
 
       <main className="custom-container">
-        <section className="flex gap-6">
+        <section className="flex flex-col-reverse md:flex-row gap-6">
           <SidebarCommon />
           <div className="w-full space-y-8">
             <TopBarCommon />
 
             {/* Courses Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {Array(9).fill(9).map((_, index: number) => (
                 <ShopCard
                   key={index}

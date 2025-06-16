@@ -19,7 +19,7 @@ export default function ShopDetails() {
       />
 
       <main className="custom-container">
-        <section className="w-full flex items-center justify-between gap-15 p-6 bg-gray-background rounded-[20px]">
+        <section className="w-full flex flex-col lg:flex-row items-start lg:items-center justify-between gap-15 p-6 bg-gray-background rounded-[20px]">
           {/* Left side */}
           <Image
             src="/images/shop/details/shop-details.png"

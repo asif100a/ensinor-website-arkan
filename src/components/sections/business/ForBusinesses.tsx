@@ -43,13 +43,13 @@ export default function ForBusinesses() {
         </p>
       </div>
 
-      <div className="w-full flex items-center gap-12">
+      <div className="w-full flex flex-col lg:flex-row items-center gap-12">
         <Image
           src="/images/business/for-businesses.png"
           alt="For Businesses"
           width={612}
           height={665}
-          className="w-[612px] h-[665px]"
+          className="md:w-[612px] w-full h-auto md:h-[665px]"
         />
         <ul className="w-full space-y-8">
           {/* UX/UI Design */}

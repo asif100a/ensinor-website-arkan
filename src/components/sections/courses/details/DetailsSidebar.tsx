@@ -10,7 +10,7 @@ import { Overview } from "@/types";
 export default function DetailsSidebar() {
   
   return (
-    <aside className="w-[424px] text-[#262626] text-lg space-y-8">
+    <aside className="md:w-[424px] w-full text-[#262626] text-lg space-y-8">
       {/* Course details */}
       <div className="w-full bg-gray-background p-4 rounded-xl space-y-5">
         {/* Instructor */}

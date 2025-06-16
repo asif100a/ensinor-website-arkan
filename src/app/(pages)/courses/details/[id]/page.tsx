@@ -10,7 +10,7 @@ import { courseCurriculums, learningContents } from "../../../../../../public/da
 export default function CourseDetails() {
 
   return (
-    <main className="custom-container flex gap-6">
+    <main className="custom-container flex flex-col lg:flex-row gap-6">
       <section className="space-y-8">
         {/* Title & Description */}
         <div className="w-full space-y-8 flex justify-between items-end">
@@ -29,7 +29,7 @@ export default function CourseDetails() {
         <div>
           <video
             controls
-            className="w-full h-[500px] rounded-lg shadow-lg"
+            className="w-full h-[300px] md:h-[500px] rounded-lg shadow-lg"
             src="/videos/course-intro.mp4"
           >
             Your browser does not support the video tag.
@@ -137,7 +137,7 @@ export default function CourseDetails() {
         </div>
       </section>
 
-      <div>
+      <div className="mx-auto">
         <DetailsSidebar />
       </div>
     </main>

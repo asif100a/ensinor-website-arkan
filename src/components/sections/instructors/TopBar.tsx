@@ -9,12 +9,12 @@ interface Category {
 export default function TopBar() {
   const categories: Category[] = [{ name: "", value: "" }];
   return (
-    <section className="w-full flex gap-6">
-      <form className="text-lg w-fit h-fit relative">
+    <section className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <form className="text-lg w-full lg:w-fit h-fit relative">
         <input
           type="email"
           placeholder="Search Here"
-          className="md:min-w-[424px] w-full px-5 py-[10px] bg-gray-background rounded-[8px] border border-black-secondary pl-10"
+          className="lg:min-w-[424px] min-w-full w-full px-5 py-[10px] bg-gray-background rounded-[8px] border border-black-secondary pl-10"
         />
         <IoIosSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-placeholder-text w-[24px] h-[24px]" />
       </form>
@@ -43,7 +43,7 @@ export default function TopBar() {
         ))}
       </select>
 
-      <button className="bg-yellow-primary max-w-[264px] w-full px-5 py-[10px] rounded-[8px] border text-lg font-medium">
+      <button className="bg-yellow-primary lg:max-w-[264px] w-full px-5 py-[10px] rounded-[8px] border text-lg font-medium">
         Filter Results
       </button>
     </section>

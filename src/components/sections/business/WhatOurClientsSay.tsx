@@ -65,46 +65,71 @@ export default function WhatOurClientsSay() {
       </div>
 
       {/* Testimonials */}
-      <div className="flex items-center relative">
-        {/* Left part */}
-        <div className="absolute left-0 z-0">
+      <>
+        <div className="hidden lg:flex items-center relative">
+          {/* Left part */}
+          <div className="absolute left-0 z-0">
             <div className="absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-gradient-to-r from-[#FFFFFF26] to-[#FFFFFF]"></div>
-          <Testimonial
-            clientName={testimonials[0].clientName}
-            designation={testimonials[0].designation}
-            ratings={testimonials[0].ratings}
-            text={testimonials[0].text}
-          />
+            <Testimonial
+              clientName={testimonials[0].clientName}
+              designation={testimonials[0].designation}
+              ratings={testimonials[0].ratings}
+              text={testimonials[0].text}
+            />
+          </div>
+
+          {/* Middle part */}
+          <div className="flex items-center gap-8 mx-auto z-10">
+            {/* Previous Button */}
+            <button className="bg-[#E6E6E6] text-[#8D8D8D] w-[60px] h-[60px] rounded-full flex items-center justify-center hover:bg-[#E6E6E6] transition-colors cursor-pointer">
+              <FaArrowLeftLong className="text-xl" />
+            </button>
+            <Testimonial
+              clientName={testimonials[0].clientName}
+              designation={testimonials[0].designation}
+              ratings={testimonials[0].ratings}
+              text={testimonials[0].text}
+            />
+            {/* Next Button */}
+            <button className="bg-[#E6E6E6] text-[#8D8D8D] w-[60px] h-[60px] rounded-full flex items-center justify-center hover:bg-[#E6E6E6] transition-colors cursor-pointer">
+              <FaArrowRightLong className="text-xl" />
+            </button>
+          </div>
+          {/* Right part */}
+          <div className="absolute right-0 z-0">
+            <div className="absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-gradient-to-l from-[#FFFFFF26] to-[#FFFFFF]"></div>
+            <Testimonial
+              clientName={testimonials[0].clientName}
+              designation={testimonials[0].designation}
+              ratings={testimonials[0].ratings}
+              text={testimonials[0].text}
+            />
+          </div>
         </div>
 
-        {/* Middle part */}
-        <div className="flex items-center gap-8 mx-auto z-10">
-          {/* Previous Button */}
-          <button className="bg-[#E6E6E6] text-[#8D8D8D] w-[60px] h-[60px] rounded-full flex items-center justify-center hover:bg-[#E6E6E6] transition-colors cursor-pointer">
-            <FaArrowLeftLong className="text-xl" />
-          </button>
-          <Testimonial
-            clientName={testimonials[0].clientName}
-            designation={testimonials[0].designation}
-            ratings={testimonials[0].ratings}
-            text={testimonials[0].text}
-          />
-          {/* Next Button */}
-          <button className="bg-[#E6E6E6] text-[#8D8D8D] w-[60px] h-[60px] rounded-full flex items-center justify-center hover:bg-[#E6E6E6] transition-colors cursor-pointer">
-            <FaArrowRightLong className="text-xl" />
-          </button>
+        <div className="block lg:hidden w-fit space-y-8 mx-auto lg:mx-0 mt-8 lg:mt-0">
+          {[...testimonials].map((testimonial, index) => (
+            <Testimonial
+              key={index}
+              clientName={testimonial.clientName}
+              designation={testimonial.designation}
+              ratings={testimonial.ratings}
+              text={testimonial.text}
+            />
+          ))}
+
+          <div className="flex items-center justify-center lg:justify-start gap-8">
+            {/* Previous Button */}
+            <button className="bg-[#E6E6E6] text-[#8D8D8D] w-[60px] h-[60px] rounded-full flex items-center justify-center hover:bg-[#E6E6E6] transition-colors">
+              <FaArrowLeftLong className="text-xl" />
+            </button>
+            {/* Next Button */}
+            <button className="bg-[#FFF5CC] text-[#CCB247] w-[60px] h-[60px] rounded-full flex items-center justify-center hover:bg-yellow-200 transition-colors">
+              <FaArrowRightLong className="text-xl" />
+            </button>
+          </div>
         </div>
-        {/* Right part */}
-        <div className="absolute right-0 z-0">
-            <div className="absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-gradient-to-l from-[#FFFFFF26] to-[#FFFFFF]"></div>
-          <Testimonial
-            clientName={testimonials[0].clientName}
-            designation={testimonials[0].designation}
-            ratings={testimonials[0].ratings}
-            text={testimonials[0].text}
-          />
-        </div>
-      </div>
+      </>
     </section>
   );
 }

@@ -16,9 +16,9 @@ export default function BannerPrimary({title, link}: BannerPrimaryProps) {
   const pathname = usePathname();
 
   return (
-    <section className="relative w-full h-[380px] bg-[#1B263B] overflow-hidden flex flex-col gap-2 justify-center items-center">
+    <section className="relative w-full lg:h-[380px] py-12 lg:py-0 bg-[#1B263B] overflow-hidden flex flex-col gap-2 justify-center items-center">
       {/* Left Images */}
-      <>
+      <div className="hidden lg:block">
         {/* Decorative Circle */}
         <Image
           src="/images/header/circle.png"
@@ -43,7 +43,7 @@ export default function BannerPrimary({title, link}: BannerPrimaryProps) {
           height={50}
           className="absolute bottom-[40px] left-[380px] w-[94px] h-[116px] z-0"
         />
-      </>
+      </div>
 
       {/* Centered Heading */}
       <h1 className="text-[40px] sm:text-[48px] md:text-[56px] text-white font-bold text-center leading-tight max-w-[700px] z-10 px-4">
@@ -69,7 +69,7 @@ export default function BannerPrimary({title, link}: BannerPrimaryProps) {
       )}
 
       {/* Right Images */}
-      <>
+     <div className="hidden lg:block">
         {/* Decorative Circle */}
         <Image
           src="/images/header/dotted-group.png"
@@ -94,7 +94,7 @@ export default function BannerPrimary({title, link}: BannerPrimaryProps) {
           height={50}
           className="absolute bottom-[40px] right-[380px] w-[102px] h-[90px] z-0"
         />
-      </>
+      </div>
 
     </section>
   );

@@ -14,14 +14,14 @@ export default function Events() {
     <div>
       <BannerPrimary title="Events" link={{ name: "Events", url: "/events" }} />
 
-      <main className="custom-container flex items-start gap-6">
+      <main className="custom-container flex flex-col-reverse md:flex-row items-start gap-6">
         <SidebarCommon />
 
         <div className="w-full space-y-12">
           <TopBarCommon />
 
           {/* Event Cards */}
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-6">
             {newEventData.map((event: EventTypes, index: number) => (
               <div key={index}>
                 <EventCard

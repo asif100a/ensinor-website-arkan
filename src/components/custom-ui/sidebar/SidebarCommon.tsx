@@ -3,7 +3,7 @@ import { FaAngleDown } from "react-icons/fa";
 
 export default function SidebarCommon() {
   return (
-    <aside className="w-[312px] text-[#262626] text-lg">
+    <aside className="w-full md:w-3/5 lg:w-[312px] text-[#262626] text-lg">
       {/* Category Section */}
       <div className="mb-6 w-full bg-gray-background p-4 rounded-xl">
         <h3 className="text-2xl font-semibold mb-3 border-b border-[#BFBFBF] pb-3">

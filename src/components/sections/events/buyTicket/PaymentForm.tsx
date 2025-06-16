@@ -5,12 +5,12 @@ import React from "react";
 
 export default function PaymentForm() {
   return (
-    <Card className="w-full border-none shadow-none bg-[#F3F6F7] p-6">
+    <Card className="w-full border-none shadow-none bg-[#F3F6F7] p-0 py-6 md:p-6 md:py-12">
       <div>
         <CardContent>
-          <form className="text-lg grid grid-cols-1 md:grid-cols-2 gap-12">
+          <form className="text-lg grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
             {/* Full Name */}
-            <div className="grid gap-3">
+            <div className="col-span-2 md:col-span-1 grid gap-3">
               <Label htmlFor="fullName" className=" text-lg">
                 Full Name <span className="text-red-500">*</span>
               </Label>
@@ -23,7 +23,7 @@ export default function PaymentForm() {
               />
             </div>
             {/* Phone Number */}
-            <div className="grid gap-3">
+            <div className="col-span-2 md:col-span-1 grid gap-3">
               <Label htmlFor="phoneNumber" className=" text-lg">
                 Phone Number <span className="text-red-500">*</span>
               </Label>
@@ -36,7 +36,7 @@ export default function PaymentForm() {
               />
             </div>
             {/* Email Address */}
-            <div className="grid gap-3">
+            <div className="col-span-2 md:col-span-1 grid gap-3">
               <Label htmlFor="email" className=" text-lg">
                 Email Address
               </Label>
@@ -49,7 +49,7 @@ export default function PaymentForm() {
               />
             </div>
             {/* Organization */}
-            <div className="grid gap-3">
+            <div className="col-span-2 md:col-span-1 grid gap-3">
               <Label htmlFor="organizationName" className=" text-lg">
                 Organization <span className="text-red-500">*</span>
               </Label>
@@ -75,7 +75,7 @@ export default function PaymentForm() {
               />
             </div>
             {/* Country */}
-            <div className="grid gap-3">
+            <div className="col-span-2 md:col-span-1 grid gap-3">
               <Label htmlFor="country" className=" text-lg">
                 Country <span className="text-red-500">*</span>
               </Label>
@@ -88,7 +88,7 @@ export default function PaymentForm() {
               />
             </div>
             {/* City */}
-            <div className="grid gap-3">
+            <div className="col-span-2 md:col-span-1 grid gap-3">
               <Label htmlFor="city" className=" text-lg">
                 City <span className="text-red-500">*</span>
               </Label>

@@ -4,9 +4,9 @@ import React from 'react'
 
 export default function Sidebar() {
   return (
-    <aside className='w-[380px] text-[#262626] text-lg'>
+    <aside className='w-full md:w-3/5 lg:w-[380px] text-[#262626] text-lg space-y-6'>
           {/* Category Section */}
-          <div className="mb-6 w-full bg-gray-background p-4 rounded-xl">
+          <div className="w-full bg-gray-background p-4 rounded-xl">
             <h3 className="text-2xl font-semibold mb-3 border-b border-[#BFBFBF] pb-3">Category</h3>
             <div className="space-y-2">
               <label className="flex items-center space-x-2">
@@ -42,7 +42,7 @@ export default function Sidebar() {
           </div>
 
           {/* Price Level Section */}
-         <div className="mb-6 w-full bg-gray-background p-4 rounded-xl">
+         <div className="w-full bg-gray-background p-4 rounded-xl">
             <h3 className="text-2xl font-semibold border-b border-[#BFBFBF] pb-3 mb-3">Price level</h3>
             <div className="flex gap-3">
               <button className="w-full bg-white py-2 rounded-md hover:bg-gray-100">All</button>
@@ -52,7 +52,7 @@ export default function Sidebar() {
           </div>
 
           {/* Skill Level Section */}
-         <div className="mb-6 w-full bg-gray-background p-4 rounded-xl">
+         <div className="w-full bg-gray-background p-4 rounded-xl">
             <h3 className="text-2xl font-semibold border-b border-[#BFBFBF] pb-3 mb-3">Skill Level</h3>
              <div className="flex flex-wrap gap-3">
               <button className="w-fit bg-white py-2 px-4  rounded-md hover:bg-gray-100">All levels</button>
@@ -63,7 +63,7 @@ export default function Sidebar() {
           </div>
 
           {/* Language Section */}
-         <div className="mb-6 w-full bg-gray-background p-4 rounded-xl">
+         <div className="w-full bg-gray-background p-4 rounded-xl">
             <h3 className="text-2xl font-semibold border-b border-[#BFBFBF] pb-3 mb-3">Language</h3>
              <div className="flex flex-wrap gap-3">
               <button className="w-fit bg-white py-2 px-4 rounded-md hover:bg-gray-100">English</button>

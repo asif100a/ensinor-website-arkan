@@ -18,13 +18,13 @@ export default function RequestADemo() {
           </p>
         </div>
 
-        <div className="flex gap-12 items-center">
-          <Card className="w-full border-none shadow-none bg-[#F3F6F7] p-6">
+        <div className="flex flex-col-reverse lg:flex-row gap-12 items-center">
+          <Card className="w-full border-none shadow-none bg-[#F3F6F7] p-0 py-6 md:p-6 md:py-12">
             <div>
               <CardContent>
-                <form className="text-lg grid grid-cols-1 md:grid-cols-2 gap-12">
+                <form className="text-lg grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
                   {/* First Name */}
-                  <div className="grid gap-3">
+                  <div className="col-span-2 md:col-span-1  grid gap-3">
                     <Label htmlFor="firstName" className=" text-lg">
                       First Name <span className="text-red-500">*</span>
                     </Label>
@@ -37,7 +37,7 @@ export default function RequestADemo() {
                     />
                   </div>
                   {/* Last Name */}
-                  <div className="grid gap-3">
+                  <div className="col-span-2 md:col-span-1  grid gap-3">
                     <Label htmlFor="lastName" className=" text-lg">
                       Last Name <span className="text-red-500">*</span>
                     </Label>
@@ -63,7 +63,7 @@ export default function RequestADemo() {
                     />
                   </div>
                   {/* Phone Number */}
-                  <div className="grid gap-3">
+                  <div className="col-span-2 md:col-span-1  grid gap-3">
                     <Label htmlFor="phoneNumber" className=" text-lg">
                       Phone Number <span className="text-red-500">*</span>
                     </Label>
@@ -76,7 +76,7 @@ export default function RequestADemo() {
                     />
                   </div>
                   {/* Your Role */}
-                  <div className="grid gap-3">
+                  <div className="col-span-2 md:col-span-1  grid gap-3">
                     <Label htmlFor="role" className=" text-lg">
                       Your Role <span className="text-red-500">*</span>
                     </Label>
@@ -89,7 +89,7 @@ export default function RequestADemo() {
                     />
                   </div>
                   {/* Company Size */}
-                  <div className="grid gap-3">
+                  <div className="col-span-2 md:col-span-1  grid gap-3">
                     <Label htmlFor="companySize" className=" text-lg">
                       Company Size <span className="text-red-500">*</span>
                     </Label>
@@ -102,7 +102,7 @@ export default function RequestADemo() {
                     />
                   </div>
                   {/* Number of People to Train */}
-                  <div className="grid gap-3">
+                  <div className="col-span-2 md:col-span-1  grid gap-3">
                     <Label htmlFor="numberOfPeople" className=" text-lg">
                       Number of People to Train{" "}
                       <span className="text-red-500">*</span>
@@ -134,12 +134,13 @@ export default function RequestADemo() {
             </div>
           </Card>
 
+          {/* Image */}
           <Image
             src="/images/business/request-a-demo.png"
             alt="For Businesses"
             width={425}
             height={500}
-            className="w-[425px] h-[500px]"
+            className="w-full md:w-[425px] h-auto md:h-[500px]"
           />
         </div>
       </div>

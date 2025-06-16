@@ -21,7 +21,7 @@ export default function BestQualityOnlineCourses() {
   ];
   return (
     <section className="custom-container">
-      <div className="flex items-center justify-between gap-14">
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-14">
         {/* Image Section */}
         <div className="">
           <Image
@@ -29,7 +29,7 @@ export default function BestQualityOnlineCourses() {
             alt="improve skills"
             width={640}
             height={612}
-            className="max-w-[640px] w-full h-auto object-contain"
+            className="lg:max-w-[640px] w-full h-auto object-contain"
           />
         </div>
 

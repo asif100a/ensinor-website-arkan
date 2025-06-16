@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import BannerPrimary from "@/components/Layout/Banners/BannerPrimary";
 import { Label } from "@radix-ui/react-label";
 import { Input } from "@/components/ui/input";
@@ -26,8 +26,8 @@ export default function BuyCourse() {
       {/* Banner Section */}
       <BannerPrimary title="Buy Course" link={link} />
 
-      <section className="custom-container text-[#2D2D2D] text-xl flex gap-8">
-        <Card className="w-full max-w-[872px] border-none shadow-none bg-[#F3F6F7] px-[24px] py-[28px]">
+      <section className="custom-container text-[#2D2D2D] text-xl flex flex-col lg:flex-row gap-8">
+        <Card className="w-full max-w-[872px] border-none shadow-none bg-[#F3F6F7] md:px-[24px] py-[28px]">
           <div>
             <CardContent>
               <form className="grid gap-12">
@@ -74,28 +74,10 @@ export default function BuyCourse() {
                 </Button>
               </form>
             </CardContent>
-            <CardFooter className="mt-5 flex flex-col items-center gap-4">
-              <div className="flex gap-2">
-                <p>Don’t have an account?</p>
-                <button
-                  type="button"
-                  className="text-[#FFDE59] underline cursor-pointer"
-                >
-                  Sign Up
-                </button>
-              </div>
-              <div className="w-full flex items-center gap-2">
-                <hr className="w-full bg-[#B5B5B5]" />
-                <span className="text-[#B5B5B5] text-nowrap">
-                  Or, Sign in with
-                </span>
-                <hr className="w-full bg-[#B5B5B5]" />
-              </div>
-            </CardFooter>
           </div>
         </Card>
 
-        <aside className="max-w-[500px] w-full text-[#262626] text-lg space-y-8">
+        <aside className="max-w-[500px] w-full text-[#262626] text-lg space-y-8 mx-auto">
           {/* Order Summary */}
           <div className="mb-6 w-full bg-gray-background p-6 rounded-xl space-y-4">
             <h4 className="text-2xl font-semibold border-b border-dotted border-[#BFBFBF] pb-3">
@@ -111,7 +93,7 @@ export default function BuyCourse() {
             </p>
           </div>
           {/* UX/UI Design */}
-          <div className="flex gap-4.5 w-full bg-gray-background p-6 rounded-xl">
+          <div className="flex flex-col md:flex-row gap-4.5 w-full bg-gray-background p-6 rounded-xl">
             <Image
               src="/images/courses/buy-course/course-image.png"
               alt="Course image"

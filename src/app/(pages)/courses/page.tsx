@@ -21,13 +21,13 @@ export default function Courses() {
   return (
     <div>
       <BannerPrimary title="Courses" link={link} />
-      <section className="custom-container flex gap-6">
+      <section className="custom-container flex flex-col-reverse md:flex-row gap-6">
         <Sidebar />
         <div className="w-full space-y-8">
           <TopBarCommon />
 
           {/* Courses Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {newCoursesData.map((course, index) => (
               <CourseCard
                 key={index}
