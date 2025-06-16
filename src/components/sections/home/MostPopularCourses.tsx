@@ -7,7 +7,7 @@ import { coursesData } from "../../../../public/data/demo";
 export default function MostPopularCourses() {
   return (
     <section className="custom-container space-y-10">
-      <div className="w-full space-y-8 flex justify-between items-end">
+      <div className="w-full space-y-8 flex flex-col md:flex-row justify-between items-end">
         <div className="w-full space-y-6">
           <h1 className="text-[36px] sm:text-[40px] md:text-[48px] font-bold text-[#404040] leading-tight max-w-[610px] w-full z-10">
             Most Popular Courses
@@ -29,9 +29,7 @@ export default function MostPopularCourses() {
             />
           </button>
 
-          <button
-           className="text-nowrap text-[#262626] border-2 border-[#000000] text-lg font-medium px-6 py-2 rounded-[8px] hover:bg-yellow-500 transition-colors flex items-center"
-          >
+          <button className="text-nowrap text-[#262626] border-2 border-[#000000] text-lg font-medium px-6 py-2 rounded-[8px] hover:bg-yellow-500 transition-colors flex items-center">
             View all
           </button>
         </div>
@@ -42,6 +40,7 @@ export default function MostPopularCourses() {
         {coursesData.map((course: Course, index: number) => (
           <div key={index}>
             <CourseCard
+              _id={index + ''}
               thumbnail={course.thumbnail}
               title={course.title}
               description={course.description}

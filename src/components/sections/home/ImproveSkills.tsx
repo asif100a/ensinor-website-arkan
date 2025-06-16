@@ -10,8 +10,8 @@ export default function ImproveSkills() {
   ];
   return (
     <section className="custom-container">
-      <div className="flex flex-row-reverse items-center justify-between pt-24">
-        <div className="max-w-[679px] w-full space-y-8 ">
+      <div className="flex flex-col-reverse lg:flex-row-reverse items-start lg:items-center justify-between gap-8 pt-12 lg:pt-24">
+        <div className="lg:max-w-[679px] w-full space-y-8">
           <div className="space-y-6">
             <h1 className="text-[36px] sm:text-[40px] md:text-[48px] font-bold text-[#404040] leading-tight max-w-[610px] w-full z-10">
               Improve Your Skills Learn With Us From Anywhere
@@ -51,7 +51,7 @@ export default function ImproveSkills() {
         </div>
 
         {/* Image Section */}
-        <div className="">
+        <div className="md:max-w-1/2 lg:max-w-full w-full h-full">
           <Image
             src="/images/home/improve-skills/improve-skills.png"
             alt="improve skills"

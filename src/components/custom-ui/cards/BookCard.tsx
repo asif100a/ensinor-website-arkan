@@ -10,7 +10,7 @@ export default function BookCard({
   rating,
 }: BookTypes) {
   return (
-    <div className="max-w-xs bg-[#F3F6F7] text-lg rounded-[12px] overflow-hidden p-5 space-y-4">
+    <div className="lg:max-w-xs w-full bg-[#F3F6F7] text-lg rounded-[12px] overflow-hidden p-5 space-y-4">
       {/* Image Section */}
       <div className="relative space-y-4">
         <Image

@@ -7,7 +7,7 @@ import BookCard from "@/components/custom-ui/cards/BookCard";
 export default function TrendingBooks() {
   return (
     <section className="custom-container space-y-10">
-      <div className="w-full space-y-8 flex justify-between items-end">
+      <div className="w-full space-y-8 flex flex-col md:flex-row justify-between items-start md:items-end">
         <div className="w-full max-w-[544px] space-y-6">
           <h1 className="text-[36px] sm:text-[40px] md:text-[48px] font-bold text-black-primary leading-tight max-w-[610px] w-full z-10">
             Trending Books

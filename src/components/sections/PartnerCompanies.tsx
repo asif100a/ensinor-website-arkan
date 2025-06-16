@@ -28,7 +28,7 @@ export default function PartnerCompanies({title, description}: PartnerCompaniesP
         </div>
 
         {/* Images */}
-        <div className="flex justify-between items-center">
+        <div className="flex flex-wrap justify-between items-center">
           {companyImages.map((image, index) => (
             <Image
               key={index}
@@ -36,7 +36,7 @@ export default function PartnerCompanies({title, description}: PartnerCompaniesP
               alt={`work with us ${index + 1}`}
               width={300}
               height={48}
-              className="w-auto h-[48px] object-contain"
+              className="w-24 lg:w-auto h-[48px] object-contain"
             />
           ))}
         </div>

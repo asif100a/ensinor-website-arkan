@@ -15,7 +15,7 @@ export default function TrendingCourses() {
   return (
     <div className="custom-container space-y-10">
       <section>
-        <div className="w-full space-y-8 flex justify-between items-end">
+        <div className="w-full space-y-8 flex flex-col md:flex-row justify-between items-start md:items-end">
           <div className="w-full space-y-6">
             <h1 className="text-[36px] sm:text-[40px] md:text-[48px] font-bold text-[#404040] leading-tight max-w-[610px] w-full z-10">
               Our Trending Courses
@@ -33,7 +33,7 @@ export default function TrendingCourses() {
         </div>
 
         {/* Trending Courses Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-6 lg:mt-0">
           {trendingCoursesData.map(
             (course: TrendingCourseTypes, index: number) => (
               <div key={index}>
@@ -57,7 +57,7 @@ export default function TrendingCourses() {
       </section>
 
       {/* Become an Instructor! */}
-      <section className="w-full flex bg-[#FFF5CC] rounded-[12px] px-15 mt-24">
+      <section className="w-full flex flex-col md:flex-row bg-[#FFF5CC] rounded-[12px] px-6 lg:px-15 mt-24">
         {/* Left */}
         <div className="flex">
           <div className="flex flex-col justify-between min-h-[184px] space-y-5 py-6">
@@ -76,7 +76,7 @@ export default function TrendingCourses() {
               </button>
             </div>
           </div>
-          <div className="w-full h-full flex items-end">
+          <div className="w-full h-full hidden md:flex items-end">
             <Image
               src="/images/home/trending-courses/become-instructor.png"
               alt="Become an Instructor"

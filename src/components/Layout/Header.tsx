@@ -62,7 +62,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-[#1B263B] text-white text-lg w-full h-fit py-4">
+    <header className="bg-[#1B263B] text-white text-lg w-full h-fit py-4 px-3 sm:px-6 lg:px-0 relative">
       <div className="max-w-[1322px] w-full mx-auto flex justify-between">
         {/* Logo */}
         <Link href="/">
@@ -70,8 +70,8 @@ const Header = () => {
             <Image
               src="/images/logo.png"
               alt="logo"
-              width={300}
-              height={150}
+              width={38}
+              height={38}
               className="w-[38px] h-[38px] cursor-pointer"
             />
             <Image
@@ -92,8 +92,11 @@ const Header = () => {
         >
           {isMobileMenuOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
         </button>
-        
-        <NavigationMenu viewport={false} className="mx-auto space-x-6 hidden lg:block">
+
+        <NavigationMenu
+          viewport={false}
+          className="mx-auto space-x-6 hidden lg:flex"
+        >
           <NavigationMenuList className="w-full flex gap-6 border-r border-white shadow-none px-6">
             <ul className="w-full flex items-center gap-6">
               {links.slice(0, 4).map((link: Link) => (
@@ -200,77 +203,83 @@ const Header = () => {
       </div>
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden px-4 pb-4">
-          <ul className="flex flex-col gap-4">
-            {links.map((link) => (
-              <li key={link.name}>
-                <Link
-                  href={link.url}
-                  className={`block ${
-                    link.url === pathname ? "text-white" : "text-[#BFBFBF]"
-                  } hover:text-white transition`}
-                >
-                  {link.name}
+        <div className="absolute z-20 top-18 left-0 right-0 px-3 md:px-6">
+          <div className="block lg:hidden bg-[#1B263B] px-6 py-4 border border-black-secondary rounded-xl">
+            <ul className="flex flex-col gap-4">
+              {links.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.url}
+                    className={`block ${
+                      link.url === pathname ? "text-white" : "text-[#BFBFBF]"
+                    } hover:text-white transition`}
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <details className="group">
+                  <summary className="flex justify-between items-center text-[#BFBFBF] hover:text-white cursor-pointer">
+                    Pages
+                  </summary>
+                  <ul className="pl-4 mt-2 flex flex-col gap-2">
+                    {pages.map((page) => (
+                      <li key={page.title}>
+                        <Link
+                          href={page.href}
+                          className={`${
+                            page.href === pathname
+                              ? "text-white"
+                              : "text-[#BFBFBF]"
+                          } hover:text-yellow-500 transition`}
+                        >
+                          {page.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details className="group">
+                  <summary className="flex justify-between items-center text-[#BFBFBF] hover:text-white cursor-pointer">
+                    Language
+                  </summary>
+                  <ul className="pl-4 mt-2 grid grid-cols-2 gap-2">
+                    {countryCodes.map((code) => (
+                      <li key={code}>
+                        <button
+                          className="flex items-center gap-2 hover:text-yellow-400"
+                          onClick={() => handleLanguageChange(code)}
+                        >
+                          <Image
+                            src={`https://flagsapi.com/${code}/flat/64.png`}
+                            width={24}
+                            height={24}
+                            alt={`${code} flag`}
+                          />
+                          {code}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <Link href="/cart">
+                  <AiOutlineShoppingCart className="w-6 h-6 text-white" />
                 </Link>
               </li>
-            ))}
-            <li>
-              <details className="group">
-                <summary className="flex justify-between items-center text-[#BFBFBF] hover:text-white cursor-pointer">
-                  Pages
-                </summary>
-                <ul className="pl-4 mt-2 flex flex-col gap-2">
-                  {pages.map((page) => (
-                    <li key={page.title}>
-                      <Link
-                        href={page.href}
-                        className="text-[#BFBFBF] hover:text-yellow-500 transition"
-                      >
-                        {page.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </details>
-            </li>
-            <li>
-              <details className="group">
-                <summary className="flex justify-between items-center text-[#BFBFBF] hover:text-white cursor-pointer">
-                  Language
-                </summary>
-                <ul className="pl-4 mt-2 grid grid-cols-2 gap-2">
-                  {countryCodes.map((code) => (
-                    <li key={code}>
-                      <button
-                        className="flex items-center gap-2 hover:text-yellow-400"
-                        onClick={() => handleLanguageChange(code)}
-                      >
-                        <Image
-                          src={`https://flagsapi.com/${code}/flat/64.png`}
-                          width={24}
-                          height={24}
-                          alt={`${code} flag`}
-                        />
-                        {code}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </details>
-            </li>
-            <li>
-              <Link href="/cart">
-                <AiOutlineShoppingCart className="w-6 h-6 text-white" />
-              </Link>
-            </li>
-            <li>
-              <Link href="/login">
-                <Button className="bg-[#FFDE59] hover:bg-[#fee88f] text-[#262626] w-full">
-                  Login
-                </Button>
-              </Link>
-            </li>
-          </ul>
+              <li>
+                <Link href="/login">
+                  <Button className="bg-[#FFDE59] hover:bg-[#fee88f] text-[#262626] w-fit">
+                    Login
+                  </Button>
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       )}
     </header>
