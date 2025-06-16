@@ -8,11 +8,49 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 
+const navLinks = [
+  {
+    title: "Featured Courses",
+    links: ["Development", "UX/UI Design", "Graphic Design", "Video Editing"],
+    hrefs: [
+      "/development",
+      "/ux-ui-design",
+      "/graphic-design",
+      "/video-editing",
+    ],
+  },
+  {
+    title: "Community",
+    links: ["Business", "Instructor", "My Account", "Event"],
+    hrefs: ["/business", "/instructor", "/my-account", "/event"],
+  },
+  {
+    title: "Quick Link",
+    links: ["About Us", "Contact Us", "Blogs", "Courses"],
+    hrefs: ["/about-us", "/contact-us", "/blogs", "/courses"],
+  },
+  {
+    title: "Support",
+    links: [
+      "Modhubag, Moghbazar, Dhaka",
+      "exclusive@gmail.com",
+      "+88015-88888-9999",
+      "+88015-88888-9999",
+    ],
+    hrefs: [
+      "https://www.google.com/maps/place/373%2F4+Modhubag,+Moghbazar,+Dhaka-1217/@23.7592566,90.4019705,15z/data=!4m10!1m2!2m1!1sModhubag,+Moghbazar,+Dhaka!3m6!1s0x3755b940654ebd59:0xcf2605ecb69b96b2!8m2!3d23.7596942!4d90.4116832",
+      "mailto:exclusive@gmail.com",
+      "tel:+88015-88888-9999",
+      "tel:+88015-88888-9999",
+    ],
+  },
+];
+
 export default function Footer() {
   return (
-    <footer className="w-full h-full pt-10 bg-[#1B263B] py-10 text-white text-base">
-      <div className="max-w-[1322px] mx-auto">
-        <div className="w-full flex gap-16">
+    <footer className="w-full py-10 bg-[#1B263B] text-white text-base overflow-hidden">
+      <div className="max-w-[1322px] mx-auto px-4">
+        <div className="w-full flex flex-col lg:flex-row gap-10 lg:gap-16">
           <div className="w-full max-w-[357px] flex flex-col gap-6">
             {/* Logo */}
             <Link href="/">
@@ -40,119 +78,47 @@ export default function Footer() {
             </p>
             {/* Social Media */}
             <div className="flex items-center gap-4">
-              <span className="w-[28px] h-[28px] text-[#FFDE59] border border-[#FFDE59] rounded-full flex items-center justify-center">
-                <FaFacebookF className="text-[18px]" />
-              </span>
-              <span className="w-[28px] h-[28px] text-[#FFDE59] border border-[#FFDE59] rounded-full flex items-center justify-center">
-                <FaTwitter className="text-[18px]" />
-              </span>
-              <span className="w-[28px] h-[28px] text-[#FFDE59] border border-[#FFDE59] rounded-full flex items-center justify-center">
-                <FaLinkedinIn className="text-[18px]" />
-              </span>
-              <span className="w-[28px] h-[28px] text-[#FFDE59] border border-[#FFDE59] rounded-full flex items-center justify-center">
-                <FaPinterestP className="text-[18px]" />
-              </span>
+              {[FaFacebookF, FaTwitter, FaLinkedinIn, FaPinterestP].map(
+                (Icon, i) => (
+                  <span
+                    key={i}
+                    className="w-[28px] h-[28px] text-[#FFDE59] border border-[#FFDE59] rounded-full flex items-center justify-center"
+                  >
+                    <Icon className="text-[18px]" />
+                  </span>
+                )
+              )}
             </div>
           </div>
 
           {/* Nav Links */}
-          <nav className="w-full flex gap-16">
-            {/* Featured Courses */}
-            <div className="w-full space-y-12">
-              <h5 className="text-xl">Featured Courses</h5>
-              <ul className="space-y-2">
-                <li>
-                  <Link href={"/development"}>Development</Link>
-                </li>
-                <li>
-                  <Link href={"/ux-ui-design"}>UX/UI Design</Link>
-                </li>
-                <li>
-                  <Link href={"/graphic-design"}>Graphic Design</Link>
-                </li>
-                <li>
-                  <Link href={"/video-editing"}>Video Editing</Link>
-                </li>
-              </ul>
-            </div>
-            {/* Community */}
-            <div className="w-full space-y-12">
-              <h5 className="text-xl">Community</h5>
-              <ul className="space-y-2">
-                <li>
-                  <Link href={"/business"}>Business</Link>
-                </li>
-                <li>
-                  <Link href={"/instructor"}>Instructor</Link>
-                </li>
-                <li>
-                  <Link href={"/my-account"}>My Account</Link>
-                </li>
-                <li>
-                  <Link href={"/event"}>Event</Link>
-                </li>
-              </ul>
-            </div>
-            {/* Quick Link */}
-            <div className="w-full space-y-12">
-              <h5 className="text-xl">Quick Link</h5>
-              <ul className="space-y-2">
-                <li>
-                  <Link href={"/about-us"}>About Us</Link>
-                </li>
-                <li>
-                  <Link href={"/contact-us"}>Contact Us</Link>
-                </li>
-                <li>
-                  <Link href={"/blogs"}>Blogs</Link>
-                </li>
-                <li>
-                  <Link href={"/courses"}>Courses</Link>
-                </li>
-              </ul>
-            </div>
-            {/* Support */}
-            <div className="w-full space-y-12">
-              <h5 className="text-xl">Support</h5>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href={
-                      "https://www.google.com/maps/place/373%2F4+Modhubag,+Moghbazar,+Dhaka-1217/@23.7592566,90.4019705,15z/data=!4m10!1m2!2m1!1sModhubag,+Moghbazar,+Dhaka!3m6!1s0x3755b940654ebd59:0xcf2605ecb69b96b2!8m2!3d23.7596942!4d90.4116832!15sChpNb2RodWJhZywgTW9naGJhemFyLCBEaGFrYZIBEmFwYXJ0bWVudF9idWlsZGluZ6oBQRABMh8QASIbEDcSo2_Hp4r5yDgJ5uVKeNHGcGXp_1IH0G5KMhwQAiIYbW9kaHViYWcgbW9naGJhemFyIGRoYWth4AEA!16s%2Fg%2F11rw6747vs?entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D"
-                    }
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Modhubag, Moghbazar, Dhaka
-                  </Link>
-                </li>
-                <li>
-                  <Link href={"mailto:exclusive@gmail.com"}>
-                    exclusive@gmail.com
-                  </Link>
-                </li>
-                <li>
-                  <Link href={"tel:+88015-88888-9999"}>+88015-88888-9999</Link>
-                </li>
-                <li>
-                  <Link href={"tel:+88015-88888-9999"}>+88015-88888-9999</Link>
-                </li>
-              </ul>
-            </div>
+          <nav className="w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            {navLinks.map((section, i) => (
+              <div key={i} className="space-y-4">
+                <h5 className="text-xl">{section.title}</h5>
+                <ul className="space-y-2">
+                  {section.links.map((text, j) => (
+                    <li key={j}>
+                      <Link href={section.hrefs[j]}>{text}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </nav>
         </div>
 
-        <div className="w-full border-t border-white my-4" />
+        <div className="w-full border-t border-white my-6" />
 
         {/* Bottom */}
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col sm:flex-row justify-between items-center text-center gap-4">
           <p className="text-lg">&copy; 2025 ENSINOR All right reserved.</p>
-          <ul className="flex items-center gap-6">
+          <ul className="flex flex-wrap justify-center items-center gap-4">
             <li>
-              <Link href={"/terms-of-use"}>Terms Of Use</Link>
+              <Link href="/terms-of-use">Terms Of Use</Link>
             </li>
             <li>
-              <Link href={"/privacy-policy"}>Privacy Policy</Link>
+              <Link href="/privacy-policy">Privacy Policy</Link>
             </li>
           </ul>
         </div>

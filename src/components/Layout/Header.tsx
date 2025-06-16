@@ -10,7 +10,11 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import {
+  AiOutlineClose,
+  AiOutlineMenu,
+  AiOutlineShoppingCart,
+} from "react-icons/ai";
 import axios from "axios";
 import "@/custom_style/style.css";
 import { usePathname } from "next/navigation";
@@ -26,6 +30,7 @@ const Header = () => {
   const pathname = usePathname();
   const [countryCodes, setCountryCodes] = React.useState<string[]>(["EN"]);
   const [language, setLanguage] = React.useState<string>("EN");
+  const [isMobileMenuOpen, setMobileMenuOpen] = React.useState<boolean>(false);
 
   const fetchCountryCodes = async () => {
     try {
@@ -78,8 +83,18 @@ const Header = () => {
             />
           </div>
         </Link>
-        <NavigationMenu viewport={false} className="mx-auto space-x-3">
-          <NavigationMenuList className="w-full flex gap-6 border-r border-white shadow-none">
+
+        {/* Hamburger for mobile */}
+        <button
+          className="lg:hidden text-white text-2xl"
+          onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {isMobileMenuOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
+        </button>
+        
+        <NavigationMenu viewport={false} className="mx-auto space-x-6 hidden lg:block">
+          <NavigationMenuList className="w-full flex gap-6 border-r border-white shadow-none px-6">
             <ul className="w-full flex items-center gap-6">
               {links.slice(0, 4).map((link: Link) => (
                 <li key={link.name}>
@@ -174,15 +189,90 @@ const Header = () => {
                 </Link>
               </li>
             </ul>
-            {/* Login Button */}
-            <Link href="/login">
-              <Button className="bg-[#FFDE59] hover:bg-[#fee88f] text-[#262626] cursor-pointer">
-                Login
-              </Button>
-            </Link>
           </NavigationMenuList>
+          {/* Login Button */}
+          <Link href="/login">
+            <Button className="bg-[#FFDE59] hover:bg-[#fee88f] text-[#262626] cursor-pointer">
+              Login
+            </Button>
+          </Link>
         </NavigationMenu>
       </div>
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden px-4 pb-4">
+          <ul className="flex flex-col gap-4">
+            {links.map((link) => (
+              <li key={link.name}>
+                <Link
+                  href={link.url}
+                  className={`block ${
+                    link.url === pathname ? "text-white" : "text-[#BFBFBF]"
+                  } hover:text-white transition`}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <details className="group">
+                <summary className="flex justify-between items-center text-[#BFBFBF] hover:text-white cursor-pointer">
+                  Pages
+                </summary>
+                <ul className="pl-4 mt-2 flex flex-col gap-2">
+                  {pages.map((page) => (
+                    <li key={page.title}>
+                      <Link
+                        href={page.href}
+                        className="text-[#BFBFBF] hover:text-yellow-500 transition"
+                      >
+                        {page.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details className="group">
+                <summary className="flex justify-between items-center text-[#BFBFBF] hover:text-white cursor-pointer">
+                  Language
+                </summary>
+                <ul className="pl-4 mt-2 grid grid-cols-2 gap-2">
+                  {countryCodes.map((code) => (
+                    <li key={code}>
+                      <button
+                        className="flex items-center gap-2 hover:text-yellow-400"
+                        onClick={() => handleLanguageChange(code)}
+                      >
+                        <Image
+                          src={`https://flagsapi.com/${code}/flat/64.png`}
+                          width={24}
+                          height={24}
+                          alt={`${code} flag`}
+                        />
+                        {code}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            </li>
+            <li>
+              <Link href="/cart">
+                <AiOutlineShoppingCart className="w-6 h-6 text-white" />
+              </Link>
+            </li>
+            <li>
+              <Link href="/login">
+                <Button className="bg-[#FFDE59] hover:bg-[#fee88f] text-[#262626] w-full">
+                  Login
+                </Button>
+              </Link>
+            </li>
+          </ul>
+        </div>
+      )}
     </header>
   );
 };
