@@ -20,10 +20,10 @@ export default function EventDetails() {
           />
           {/* Title & Description */}
           <div className="absolute bottom-0 p-2.5 text-white">
-            <h1 className="text-[36px] sm:text-[40px] md:text-[40px] font-bold leading-tight max-w-[610px] w-full z-10">
+            <h1 className="text-[30px] sm:text-[40px] md:text-[40px] font-bold leading-tight max-w-[610px] w-full z-10">
               Behind Every Smile: The People Who Make It Happen
             </h1>
-            <p className="text-base font-normal">
+            <p className="text-sm md:text-base font-normal">
               This event is designed to help you explore academic opportunity,
               connect with current students and faculty,
             </p>
@@ -32,7 +32,7 @@ export default function EventDetails() {
 
         <div className="space-y-6">
           {/* Badges */}
-          <div className="p-6 rounded-xl bg-gray-background flex items-center justify-between">
+          <div className="p-6 rounded-xl bg-gray-background flex flex-col md:flex-row gap-3 md:gap-0 items-center justify-between">
             {/* 1 */}
             <div className="text-black-secondary font-normal space-y-2.5 w-full">
               <h6 className="text-[15px]">Organized by:</h6>
@@ -127,7 +127,7 @@ export default function EventDetails() {
               </p>
             </div>
             {/* Cards */}
-            <div className="flex items-center gap-8">
+            <div className="flex flex-col md:flex-row items-center gap-8">
               {/* 1 */}
               <div className="w-full bg-white rounded-xl p-3">
                 <div className="flex items-center gap-2.5">
@@ -150,7 +150,7 @@ export default function EventDetails() {
               <div className="w-full bg-white rounded-xl p-3">
                 <div className="flex items-center gap-2.5">
                   <Image
-                    src="/images/events/details/designer.png"
+                    src="/images/events/details/designer-1.png"
                     alt="Organized by"
                     width={80}
                     height={62}

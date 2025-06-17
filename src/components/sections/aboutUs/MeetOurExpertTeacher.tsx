@@ -43,7 +43,7 @@ export default function MeetOurExpertTeacher() {
       </div>
 
       {/* Feature Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full mx-auto">
         {teachers.map((teacher) => (
           <div
             key={teacher.name}
@@ -54,7 +54,7 @@ export default function MeetOurExpertTeacher() {
               alt={teacher.name}
               width={312}
               height={340}
-              className="max-w-[312px]  w-full max-h-[340px] h-full"
+              className="md:max-w-[312px] w-full max-h-[340px] h-full"
             />
             <div
               className={`w-full absolute bottom-0 left-0 right-0 z-10 text-white bg-[#1B263B] mx-auto py-4 rounded-t-xl transition-opacity duration-500 opacity-0 group-hover:opacity-100`}

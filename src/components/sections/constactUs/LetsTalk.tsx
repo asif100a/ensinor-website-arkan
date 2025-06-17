@@ -13,7 +13,7 @@ import React from "react";
 
 export default function LetsTalk() {
   return (
-    <section className="custom-container text-[#2D2D2D] text-xl flex gap-12">
+    <section className="custom-container text-[#2D2D2D] text-xl flex flex-col lg:flex-row gap-12">
       {/* Support Image */}
       <Image
         src="/images/contact-us/support.png"
@@ -29,7 +29,7 @@ export default function LetsTalk() {
           To request a quote or want to meet up for coffee, contact us directly
           or fill out the form and we will get back to you promptly
         </CardDescription>
-        <CardContent>
+        <CardContent className="px-0 md:px-6">
           <form className="grid gap-12">
             <div className="flex flex-col gap-12">
               {/* Name */}

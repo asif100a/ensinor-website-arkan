@@ -45,7 +45,7 @@ export default function WeAreHereToHelp() {
           alt="Location"
           width={240}
           height={240}
-          className="w-[240px] h-[240px] absolute -top-1/3 -left-20 z-0"
+          className="hidden lg:block w-[240px] h-[240px] absolute -top-1/3 -left-20 z-0"
         />
 
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto">
@@ -103,7 +103,7 @@ export default function WeAreHereToHelp() {
           alt="Location"
           width={230}
           height={130}
-          className="w-[230px] h-[130px] absolute -bottom-1/5 -right-13 z-0"
+          className="hidden lg:block w-[230px] h-[130px] absolute -bottom-1/5 -right-13 z-0"
         />
       </div>
     </section>

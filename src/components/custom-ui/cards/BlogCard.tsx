@@ -48,7 +48,7 @@ export default function BlogCard({
         </p>
 
         {/* Views & Post Date */}
-        <div className="flex items-center justify-between">
+        <div className="flex flex-row items-center justify-between">
           {/* Views */}
           <p className="flex items-center gap-1">
             <Image

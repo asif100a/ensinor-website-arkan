@@ -67,7 +67,7 @@ export default function EventSchedule() {
             return (
               <div
                 key={index}
-                className="px-6 py-4 h-fit bg-gray-100 rounded-lg dark:bg-gray-800"
+                className="md:px-6 md:py-4 h-fit bg-gray-100 rounded-lg dark:bg-gray-800"
               >
                 <button
                   onClick={() => handleFaqOpen(index + 1)}

@@ -40,7 +40,7 @@ export default function DetailsSidebar() {
                     />
                     <span>{suggestedBlogs.blogger.name}</span>
                   </p>
-                  <div className="flex items-center justify-between gap-5">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-5">
                     {/* Views */}
                     <p className="flex items-center gap-[5px]">
                       <Image

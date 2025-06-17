@@ -18,7 +18,7 @@ export default function BlogCards() {
 
   return (
     <section className="space-y-10">
-      <div className="flex items-center gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 border p-3 md:p-6 rounded-xl lg:border-none lg:p-0 lg:rounded-none">
         {tabs.map((tab: string) => (
           <button
             key={tab}

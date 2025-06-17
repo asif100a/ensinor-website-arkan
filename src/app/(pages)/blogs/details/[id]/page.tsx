@@ -17,10 +17,10 @@ export default function BlogDetails() {
         link={{ name: "Blog Details", url: `/blogs/details/${params._id}` }}
       />
 
-      <main className="custom-container flex gap-6">
+      <main className="custom-container flex flex-col lg:flex-row gap-6">
         <section className="space-y-8">
           {/* Top Bar */}
-          <div className="text-base font-medium text-[#595959] flex items-center gap-[60px]">
+          <div className="text-base font-medium text-[#595959] grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-[60px]">
             {/* Volunteer */}
            <p className="flex items-center gap-[5px]">
               <Image
@@ -44,7 +44,7 @@ export default function BlogDetails() {
               <span>2967 People</span>
             </p>
             {/* Share */}
-            <button className="bg-[#F8CFBF] p-2 rounded-full">
+            <button className="bg-[#F8CFBF] p-2 rounded-full w-fit">
               <Image
                 src="/icons/share.svg"
                 alt="Volunteer Highlights"
