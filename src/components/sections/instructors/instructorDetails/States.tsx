@@ -36,7 +36,7 @@ export default function States() {
           />
 
           <div className="space-y-2">
-            <p className="text-lg font-medium">
+            <p className="text-lg font-medium text-nowrap">
               {state.subText}
             </p>
             <h3 className="text-3xl font-semibold">{state.mainText}</h3>

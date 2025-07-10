@@ -114,7 +114,7 @@ const Header = () => {
             </ul>
             {/* Pages Dropdown */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-inherit hover:bg-inherit text-[#BFBFBF] hover:text-white text-lg font-normal focus:bg-inherit">
+              <NavigationMenuTrigger className="bg-inherit hover:bg-inherit text-[#BFBFBF] hover:text-white text-lg font-normal focus:bg-inherit px-0 py-0">
                 Pages
               </NavigationMenuTrigger>
               <NavigationMenuContent className="z-20 bg-white text-black-primary w-fit rounded-[8px] shadow-lg p-2">
@@ -150,7 +150,7 @@ const Header = () => {
 
             {/* Language Dropdown */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-transparent hover:bg-transparent text-[#BFBFBF] hover:text-white text-lg font-normal focus:bg-transparent flex items-center gap-2">
+              <NavigationMenuTrigger className="bg-transparent hover:bg-transparent text-[#BFBFBF] hover:text-white text-lg font-normal focus:bg-transparent flex items-center gap-2 px-0 py-0 h-fit hover:bg-none">
                 <Image
                   src="/images/header/flag-us.png"
                   width={24}
@@ -195,7 +195,7 @@ const Header = () => {
           </NavigationMenuList>
           {/* Login Button */}
           <Link href="/login">
-            <Button className="bg-[#FFDE59] hover:bg-[#fee88f] text-[#262626] cursor-pointer">
+            <Button className="bg-[#FFDE59] hover:bg-[#fee88f] text-[#262626] cursor-pointer px-6 py-4">
               Login
             </Button>
           </Link>
@@ -273,7 +273,7 @@ const Header = () => {
               </li>
               <li>
                 <Link href="/login">
-                  <Button className="bg-[#FFDE59] hover:bg-[#fee88f] text-[#262626] w-fit">
+                  <Button className="bg-[#FFDE59] hover:bg-[#fee88f] text-[#262626] w-fit !px-6">
                     Login
                   </Button>
                 </Link>
