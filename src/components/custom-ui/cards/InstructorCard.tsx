@@ -1,9 +1,11 @@
 import { Instructor } from "@/types";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { FaStar } from "react-icons/fa";
 
 export default function InstructorCard({
+  id,
   name,
   thumbnail,
   designation,
@@ -26,9 +28,11 @@ export default function InstructorCard({
         <div className="">
           <div className="w-full flex items-center justify-between gap-2 text-black">
             {/* Instructor Name */}
-            <p className="text-[22px] font-semibold">
-              {name || "Instructor name"}
-            </p>
+            <Link href={`/instructors/details/${id}`} className="cursor-pointer hover:text-yellow-star">
+              <h3 className="text-[22px] font-semibold">
+                {name || "Instructor name"}
+              </h3>
+            </Link>
 
             {/* Ratings */}
             <p className="flex items-center gap-2">
@@ -36,7 +40,9 @@ export default function InstructorCard({
               <span className="text-base font-medium">{ratings || "0.0"}</span>
             </p>
           </div>
-          <p className="text-base font-medium text-black-secondary">{designation}</p>
+          <p className="text-base font-medium text-black-secondary">
+            {designation}
+          </p>
         </div>
       </div>
 
@@ -48,9 +54,7 @@ export default function InstructorCard({
           <span className="font-medium">{experience || "0"}</span>
         </p>
         {/* Description */}
-        <p>
-          {description || "Course Description"}
-        </p>
+        <p>{description || "Course Description"}</p>
       </div>
     </div>
   );

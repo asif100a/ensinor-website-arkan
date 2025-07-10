@@ -56,6 +56,7 @@ export interface Page {
 }
 
 export interface Instructor {
+  id: number;
   name: string;
   thumbnail: string;
   designation: string;

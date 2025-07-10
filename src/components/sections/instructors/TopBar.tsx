@@ -10,11 +10,11 @@ export default function TopBar() {
   const categories: Category[] = [{ name: "", value: "" }];
   return (
     <section className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <form className="text-lg w-full lg:w-fit h-fit relative">
+      <form className="text-lg w-full h-fit relative">
         <input
           type="email"
           placeholder="Search Here"
-          className="lg:min-w-[424px] min-w-full w-full px-5 py-[10px] bg-gray-background rounded-[8px] border border-black-secondary pl-10"
+          className="w-full px-5 py-[10px] bg-gray-background rounded-[8px] border border-black-secondary pl-10"
         />
         <IoIosSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-placeholder-text w-[24px] h-[24px]" />
       </form>
