@@ -9,14 +9,14 @@ import { PaginationBar } from "@/components/custom-ui/PaginationBar";
 import SidebarCommon from "@/components/custom-ui/sidebar/SidebarCommon";
 import TopBarCommon from "@/components/custom-ui/topBars/TopBarCommon";
 
-export const shopData: ShopTypes = {
+const shopData: ShopTypes = {
     _id: '1',
     thumbnail: '/images/shop/shop-card.png',
     title: "Responsive Web Design",
     description: "Preference any astonished unreserved Mrs. Prosperous understoodMiddleton's in conviction an uncommonly do.",
     productManager: "Shahid Hasan",
     price: 120,
-  };
+};
 
 
 export default function Shop() {

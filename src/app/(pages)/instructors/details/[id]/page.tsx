@@ -1,7 +1,7 @@
 "use client";
 
 import BannerPrimary from "@/components/Layout/Banners/BannerPrimary";
-import React, { useState } from "react";
+import React from "react";
 import "@/custom_style/style.css";
 import Image from "next/image";
 import { useParams } from "next/navigation";
@@ -12,7 +12,6 @@ import { FaStar } from "react-icons/fa";
 
 export default function InstructorDetails() {
   const params = useParams();
-  const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
 
   const newCoursesData = [
     ...coursesData.slice(0, 3),
@@ -79,10 +78,13 @@ export default function InstructorDetails() {
     <div>
       <BannerPrimary
         title="Instructors Details"
-        link={{ name: "Shop Details", url: `/instructors/details/${params.id}` }}
+        link={{
+          name: "Instructor Details",
+          url: `/instructors/details/${params.id}`,
+        }}
       />
 
-      <main className="custom-container flex gap-6">
+      <main className="custom-container flex flex-col lg:flex-row gap-6">
         {/* Left Section */}
         <section className="w-fit h-fit space-y-6">
           {/* Instructor Image & Rating & Follow */}
@@ -117,13 +119,15 @@ export default function InstructorDetails() {
 
                 <span className="flex items-center gap-2">
                   {socialMediaIcons.map((icon: string) => (
-                    <Image
-                      src={`/icons/${icon}.svg`}
-                      alt={icon}
-                      width={24}
-                      height={24}
-                      className="w-6 h-6"
-                    />
+                    <span key={icon}>
+                      <Image
+                        src={`/icons/${icon}.svg`}
+                        alt={icon}
+                        width={24}
+                        height={24}
+                        className="w-6 h-6"
+                      />
+                    </span>
                   ))}
                 </span>
               </p>
@@ -192,17 +196,17 @@ export default function InstructorDetails() {
             <div className="text-base font-normal text-black-secondary space-y-6">
               <p>
                 Get to know our instructors better. This page provides detailed
-                information about each instructor's background, expertise,
+                information about each instructor&apos;s background, expertise,
                 courses offered, and experience. Discover their qualifications,
                 professional journey, certifications, and read feedback from
-                students who have learned under their guidance. Whether you're
+                students who have learned under their guidance. Whether you&apos;re
                 choosing a course or exploring learning paths, understanding
                 your instructor helps build trust and ensures a better learning
                 experience.
               </p>
               <p>
                 Get to know our instructors better. This page provides detailed
-                information about each instructor's background, expertise,
+                information about each instructor&apos;s background, expertise,
                 courses offered, and experience. Discover their qualifications,
                 professional journey, certifications, and read feedback from
                 students who have learned under their guidance.
@@ -224,7 +228,12 @@ export default function InstructorDetails() {
                     height={24}
                     className="w-6 h-6"
                   />
-                  <p className="text-black-secondary"><span className="font-semibold">{contact?.contactName}:</span> {contact.text}</p>
+                  <p className="text-black-secondary">
+                    <span className="font-semibold">
+                      {contact?.contactName}:
+                    </span>{" "}
+                    {contact.text}
+                  </p>
                 </div>
               ))}
             </div>

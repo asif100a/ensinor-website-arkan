@@ -1,9 +1,12 @@
+"use client";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import React from "react";
 
 export default function PaymentForm() {
+
   return (
     <Card className="w-full border-none shadow-none bg-[#F3F6F7] p-0 py-6 md:p-6 md:py-12">
       <div>
