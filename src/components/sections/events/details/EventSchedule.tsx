@@ -37,8 +37,8 @@ export default function EventSchedule() {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const handleFaqOpen = (index: number) => {
-    console.log({ index });
-    console.log({ currentIndex });
+    // console.log({ index });
+    // console.log({ currentIndex });
     setCurrentIndex(index);
     setIsFaqOpen(!isFaqOpen);
   };

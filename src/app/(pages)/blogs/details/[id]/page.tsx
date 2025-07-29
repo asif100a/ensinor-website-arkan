@@ -8,7 +8,7 @@ import DetailsSidebar from "@/components/sections/blogs/details/DetailsSidebar";
 
 export default function BlogDetails() {
   const params = useParams();
-  console.log({ params });
+  // console.log({ params });
 
   return (
     <>

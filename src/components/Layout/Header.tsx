@@ -45,8 +45,8 @@ const Header = () => {
   React.useEffect(() => {
     fetchCountryCodes();
   }, []);
-  console.log("Country Codes:", countryCodes);
-  console.log("Selected Language:", language);
+  // console.log("Country Codes:", countryCodes);
+  // console.log("Selected Language:", language);
 
   const handleLanguageChange = async (lang: string) => {
     setLanguage(lang);

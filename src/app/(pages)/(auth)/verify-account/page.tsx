@@ -18,7 +18,7 @@ export default function VerifyAccount() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // Handle form submission logic here
-    console.log("Form submitted");
+    // console.log("Form submitted");
     // Redirect to a success page or show a success message
     router.push("/create-new-password");
   };
