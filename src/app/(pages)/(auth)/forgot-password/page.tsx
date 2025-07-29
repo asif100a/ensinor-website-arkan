@@ -15,7 +15,7 @@ export default function ForgotPassword() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // Handle form submission logic here
-    console.log("Form submitted");
+    // console.log("Form submitted");
     // Redirect to a verification page
     router.push("/verify-account");
   };

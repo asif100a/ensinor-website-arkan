@@ -8,7 +8,7 @@ export default function GreatConversation() {
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle subscription logic here
-    console.log("Subscribed!");
+    // console.log("Subscribed!");
   };
 
   return (

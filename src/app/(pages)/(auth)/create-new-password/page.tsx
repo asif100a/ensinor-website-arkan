@@ -15,7 +15,7 @@ export default function CreateNewPassword() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // Handle form submission logic here
-    console.log("Form submitted");
+    // console.log("Form submitted");
   };
 
   return (
